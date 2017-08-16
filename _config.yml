@@ -20,8 +20,8 @@ title_separator          : "-"
 name: "Eli Ben-Michael"
 description: "Academic and personal site for Eli Ben-Michael"
 
-baseurl: /~ebenmichael # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: / # the subpath of your site, e.g. /blog
+url: "https://ebenmichael.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Site Author
