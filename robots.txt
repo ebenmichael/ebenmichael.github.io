@@ -1,1 +1,1 @@
-Sitemap: https://ebenmichael.github.io/sitemap.xml
+Sitemap: https://ebenmichael.github.io//sitemap.xml
