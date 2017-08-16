@@ -1,9 +1,0 @@
-
-# main links
-main:
-  - title: "About"
-    url: /
-  - title: "Resume"
-    url: /assets/pdfs/resume.pdf
-  - title: "Personal Blog"
-    url: /blog/
