@@ -1,0 +1,350 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.4.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Eli Ben-Michael</title>
+
+
+
+
+<meta name="description" content="Academic and personal site for Eli Ben-Michael">
+
+
+
+
+<meta name="author" content="Eli Ben-Michael">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Eli Ben-Michael">
+<meta property="og:title" content="Eli Ben-Michael">
+
+
+  <link rel="canonical" href="https://ebenmichael.github.io/lab1/">
+  <meta property="og:url" content="https://ebenmichael.github.io/lab1/">
+
+
+
+
+
+  <meta name="twitter:site" content="@EliBenMichael">
+  <meta name="twitter:title" content="Eli Ben-Michael">
+  <meta name="twitter:description" content="Academic and personal site for Eli Ben-Michael">
+  <meta name="twitter:url" content="https://ebenmichael.github.io/lab1/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Eli Ben-Michael">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ebenmichael.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Eli Ben-Michael Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ebenmichael.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://ebenmichael.github.io/">Eli Ben-Michael</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://ebenmichael.github.io/">About</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ebenmichael.github.io/assets/pdfs/resume.pdf">Resume</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ebenmichael.github.io/teaching/">Teaching</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ebenmichael.github.io/blog/">Personal Blog</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h1 id="lab-1">Lab 1</h1>
+
+<h2 id="installs-and-setup">Installs and Setup</h2>
+
+<h3 id="git-and-github">Git and Github</h3>
+<p>Do you have a GitHub account?</p>
+
+<p>Git configuration:</p>
+
+<ul>
+  <li>Who are you? <code class="highlighter-rouge">git config --global user.name "Eli Ben-Michael"</code></li>
+  <li>How can I reach you? <code class="highlighter-rouge">git config --global user.email ebenmichael@berkeley.edu</code></li>
+</ul>
+
+<p>Can change much more: editor, coloring, etc.</p>
+
+<h3 id="anaconda">Anaconda</h3>
+<p>What is Anaconda?</p>
+
+<ul>
+  <li>A Python distribution</li>
+  <li>An environment manager</li>
+  <li>A package manager</li>
+</ul>
+
+<h4 id="a-python-distribution">A Python distribution</h4>
+
+<ul>
+  <li>Install Anaconda from the download</li>
+  <li>Open python by typing in <code class="highlighter-rouge">python</code> into the shell. Should see something like</li>
+</ul>
+
+<p><img src="/assets/images/python_anaconda.png" alt="Alt" /></p>
+
+<ul>
+  <li>Make sure you’re using Anaconda’s python. If not, open <code class="highlighter-rouge">~/.bashrc</code> and add</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export PATH="/home/$USERNAME/anaconda3/bin:$PATH"
+</code></pre>
+</div>
+
+<h4 id="an-environment-manager">An environment manager</h4>
+
+<p>An environment is a standalone version of python which you can make changes to without affecting your global system python.</p>
+
+<ul>
+  <li>Create an environment with Python 3.6 and a few packages for this class:
+<code class="highlighter-rouge">conda create -n stat159 python=3.6 numpy scipy matplotlib</code></li>
+  <li>To activate the environment:
+    <ul>
+      <li>Linux/Mac: <code class="highlighter-rouge">source activate stat159</code></li>
+      <li>Windows: <code class="highlighter-rouge">activate stat159</code></li>
+    </ul>
+  </li>
+  <li>To deactivate the environment:
+    <ul>
+      <li>Linux/Mac: <code class="highlighter-rouge">source deactivate</code></li>
+      <li>Windows: <code class="highlighter-rouge">deactivate</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="a-package-manager">A package manager</h4>
+
+<ul>
+  <li>Add a package (pandas) to the environment</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>source activate stat159
+conda install pandas
+</code></pre>
+</div>
+
+<h3 id="playing-with-python">Playing with python</h3>
+<p>Some code to create and plot random data</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Try running this code with</p>
+<ul>
+  <li>The basic interpreter: <code class="highlighter-rouge">python</code></li>
+  <li>The Jupyter console <code class="highlighter-rouge">jupyter console</code></li>
+  <li>In a Jupyer notebook: <code class="highlighter-rouge">jupyter notebook</code></li>
+</ul>
+
+<h4 id="whirlwind-tour-of-python">Whirlwind Tour of Python</h4>
+<p>A good reference on Python that we will be using is <a href="http://www.oreilly.com/programming/free/files/a-whirlwind-tour-of-python.pdf">A Whirlwind Tour of Python</a> by Jake VanderPlas. The book has a <a href="https://github.com/jakevdp/WhirlwindTourOfPython">collection of Jupyter notebooks</a> to run through.</p>
+
+<p>Start by cloning the repo:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/jakevdp/WhirlwindTourOfPython.git
+</code></pre>
+</div>
+
+<p>Then try to run through the notebooks, changing the code yourself.</p>
+
+<h3 id="loose-ends">Loose Ends</h3>
+<p>Be sure to <a href="https://code.visualstudio.com/download">install Visual Studio Code</a> if you don’t have an editor that you already like. Also create an <a href="https://www.overleaf.com">Overleaf Account</a> for collaboration.</p>
+
+<h3 id="survey">Survey</h3>
+<p><a href="https://goo.gl/forms/PrbaWcyBi1lEXzEi2">Please complete the survey</a> 
+(Shortened url: http://bit.ly/2vpsNqu)</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/EliBenMichael"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+      <li><a href="http://github.com/ebenmichael"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+      
+    <li><a href="https://ebenmichael.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Eli Ben-Michael. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    <script src="https://ebenmichael.github.io/assets/js/main.min.js"></script>
+
+
+
+
+
+  </body>
+</html>
