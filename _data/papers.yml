@@ -38,7 +38,7 @@
   type: preprint
   venue: ""
   year: 2024
-  topics: [policy-learning, sensitivity-partial-id]
+  topics: [policy-learning]
   links:
     arxiv: "2405.08727"
   abstract: >-
@@ -50,7 +50,7 @@
   type: preprint
   venue: ""
   year: 2022
-  topics: [policy-learning]
+  topics: [policy-learning, sensitivity-partial-id]
   award: "ASA Social Statistics Section Student Paper Award (Yi Zhang)"
   links:
     arxiv: "2208.13323"
@@ -114,7 +114,7 @@
   venue: "Annals of Applied Statistics"
   year: 2026
   forthcoming: true
-  topics: [criminal-justice]
+  topics: [experiments, criminal-justice]
   links:
     arxiv: "2410.17864"
   abstract: >-
@@ -178,7 +178,7 @@
   type: article
   venue: "Journal of the Royal Statistical Society, Series A"
   year: 2026
-  topics: [policy-learning]
+  topics: [policy-learning, sensitivity-partial-id]
   links:
     journal: "https://academic.oup.com/jrsssa/advance-article/doi/10.1093/jrsssa/qnaf122/8223172?searchresult=1"
     arxiv: "2307.08840"
@@ -218,7 +218,7 @@
   type: article
   venue: "Journal of the American Statistical Association"
   year: 2025
-  topics: [policy-learning, criminal-justice]
+  topics: [policy-learning, criminal-justice, sensitivity-partial-id]
   links:
     journal: "https://www.tandfonline.com/doi/full/10.1080/01621459.2025.2489135"
     arxiv: "2109.11679"
@@ -334,7 +334,7 @@
   type: article
   venue: "Journal of the American Statistical Association"
   year: 2024
-  topics: [policy-learning, criminal-justice]
+  topics: [policy-learning]
   links:
     journal: "https://www.tandfonline.com/doi/full/10.1080/01621459.2023.2300507"
     arxiv: "2206.10479"
@@ -529,7 +529,7 @@
   type: chapter
   venue: "Gun Violence: The Statistical Issues"
   year: 2026
-  topics: [synthetic-control]
+  topics: [synthetic-control, criminal-justice]
   links:
     publisher: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003430773-8/statistical-methods-estimate-impact-gun-policy-gun-violence-eli-ben-michael-mitchell-doucette-alexander-mccourt-avi-feller-elizabeth-stuart?context=ubx&refId=5fd8a91f-3dd8-4bc9-8f99-89e8f9eb8579"
     draft: "https://arxiv.org/abs/2404.11506"

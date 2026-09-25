@@ -11,7 +11,7 @@ Previously, I was a postdoctoral fellow in the Institute for Quantitative Social
 I received my PhD in Statistics from U.C. Berkeley and I spent my undergraduate years at Columbia University where I received a
 bachelors degree in computer science and statistics.
 
-My research focuses on developing statistical and computational methods to solve practical issues in public policy and social science research. I am particularly interested in bringing together ideas from statistics, optimization, and machine learning to create methods for credible and robust causal inference and data-driven decision making.
+My research focuses on developing statistical and computational methods to solve practical issues in public policy and social science research. I am particularly interested in bringing together ideas from statistics, optimization, and artificial intelligence to create methods for credible and robust causal inference and data-driven decision making.
 
 ## Contact
 

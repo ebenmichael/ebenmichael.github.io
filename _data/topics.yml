@@ -8,7 +8,7 @@
   label: Balancing weights
   group: Methods
 - slug: policy-learning
-  label: Policy learning & decisions
+  label: Policy learning & decision making
   group: Methods
 - slug: sensitivity-partial-id
   label: Sensitivity & partial identification
