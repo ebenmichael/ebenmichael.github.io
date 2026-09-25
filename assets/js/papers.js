@@ -1,4 +1,4 @@
-// Research page: topic filter + search, shareable via the URL hash, and BibTeX copy buttons.
+// Research page: topic filter + search (shareable via the URL hash) and abstract toggles.
 (function () {
   var filters = document.querySelector(".filters");
   if (!filters) return;
@@ -94,7 +94,7 @@
   });
   window.addEventListener("hashchange", function () { readHash(); apply(); });
 
-  // Abstract / BibTeX toggles (hidden until JS runs, so no-JS visitors just see links)
+  // Abstract toggles (hidden until JS runs, so no-JS visitors just see links)
   document.querySelectorAll(".pill--toggle").forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute("aria-controls"));
     if (!panel) return;
@@ -103,27 +103,6 @@
       var open = btn.getAttribute("aria-expanded") !== "true";
       btn.setAttribute("aria-expanded", open ? "true" : "false");
       panel.hidden = !open;
-    });
-  });
-
-  // BibTeX copy buttons
-  document.querySelectorAll(".bibtex-box .copy").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var text = btn.parentNode.querySelector("code").textContent;
-      var done = function () {
-        btn.textContent = "Copied";
-        setTimeout(function () { btn.textContent = "Copy"; }, 1500);
-      };
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(done, function () {});
-      } else {
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand("copy"); done(); } catch (e) {}
-        document.body.removeChild(ta);
-      }
     });
   });
 

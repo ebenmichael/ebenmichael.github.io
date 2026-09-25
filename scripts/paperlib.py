@@ -100,7 +100,6 @@ def dump_paper(p):
              f"  title: {q(p['title'])}",
              "  authors: [" + ", ".join(q(a) for a in p["authors"]) + "]",
              f"  type: {p['type']}",
-             *([f"  bibtype: {p['bibtype']}"] if p.get("bibtype") else []),
              f"  venue: {q(p.get('venue', ''))}",
              f"  year: {p.get('year') or ''}"]
     if p.get("forthcoming"):
@@ -132,10 +131,9 @@ HEADER = """\
 # Add a paper:     make paper ARXIV=2607.14346 TOPICS=policy-learning   (or DOI=10.xxxx/yyyy)
 # Mark published:  make published ID=<id> DOI=10.xxxx/yyyy
 #
-# Fields: id, title, authors (full list, in order), type, bibtype (BibTeX entry type override,
-# e.g. inproceedings), venue, year, forthcoming (renders "2026+"), topics (slugs from
-# _data/topics.yml), links (journal, proceedings, publisher, arxiv, nber, draft, code, slides),
-# extra_links (label/url pairs), award, doi, abstract, bibtex (full override).
+# Fields: id, title, authors (full list, in order), type, venue, year, forthcoming (renders
+# "2026+"), topics (slugs from _data/topics.yml), links (journal, proceedings, publisher, arxiv,
+# nber, draft, code, slides), extra_links (label/url pairs), award, doi, abstract.
 
 """
 

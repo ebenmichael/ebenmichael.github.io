@@ -1,6 +1,6 @@
 {%- comment -%}
   Renders one paper from _data/papers.yml.
-  Params: paper (required), compact (bool: hide topics + toggles, used on the home page)
+  Params: paper (required), compact (bool: hide topics + abstract, used on the home page)
 {%- endcomment -%}
 {%- assign p = include.paper -%}
 {%- assign me = site.author.paper_name -%}
@@ -38,17 +38,12 @@
     {%- if p.abstract and p.abstract != "" %}
     <button type="button" class="pill pill--toggle" aria-expanded="false" aria-controls="{{ p.id }}-abstract" hidden>Abstract</button>
     {%- endif %}
-    <button type="button" class="pill pill--toggle" aria-expanded="false" aria-controls="{{ p.id }}-bibtex" hidden>BibTeX</button>
     {%- endunless %}
   </div>
   {%- unless include.compact %}
   {%- if p.abstract and p.abstract != "" %}
   <div class="panel abstract" id="{{ p.id }}-abstract" hidden><p>{{ p.abstract }}</p></div>
   {%- endif %}
-  <div class="panel bibtex-box" id="{{ p.id }}-bibtex" hidden>
-    <button type="button" class="copy" aria-label="Copy BibTeX">Copy</button>
-    <pre><code>{% include bibtex.txt paper=p arxiv_url=arxiv_url %}</code></pre>
-  </div>
   {%- if p.topics.size > 0 %}
   <p class="paper-topics">
     {%- for t in p.topics -%}

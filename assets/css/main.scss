@@ -178,7 +178,7 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
 .chip[aria-pressed="true"] { background: var(--chip-on-bg); color: var(--chip-on-text); }
 .chip .count { opacity: .7; font-variant-numeric: tabular-nums; margin-left: .15rem; }
 
-/* Abstract / BibTeX toggles sit in the link row; their panels open below it. */
+/* The Abstract toggle sits in the link row; its panel opens below it. */
 .pill--toggle { font-family: inherit; cursor: pointer; color: var(--muted); font-weight: 500; }
 .pill--toggle::after { content: " +"; }
 .pill--toggle[aria-expanded="true"] { background: var(--surface); color: var(--text); }
@@ -186,17 +186,6 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
 .panel { font-size: .9rem; margin-top: .5rem; }
 .panel[hidden] { display: none; }
 .abstract p { margin: 0; line-height: 1.6; }
-.bibtex-box { position: relative; }
-.bibtex-box pre {
-  margin: 0; padding: .8rem 1rem; overflow-x: auto; font-size: .78rem; line-height: 1.5;
-  background: var(--code-bg); border: 1px solid var(--border); border-radius: var(--radius);
-}
-.copy {
-  position: absolute; top: .45rem; right: .45rem; font: inherit; font-size: .75rem;
-  border: 1px solid var(--border); background: var(--bg); color: var(--muted);
-  border-radius: 6px; padding: .1rem .5rem; cursor: pointer;
-}
-.copy:hover { color: var(--text); }
 
 /* ---------------------------------------------------------------- research filters */
 .filters {

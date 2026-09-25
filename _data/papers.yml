@@ -4,10 +4,9 @@
 # Add a paper:     make paper ARXIV=2607.14346 TOPICS=policy-learning   (or DOI=10.xxxx/yyyy)
 # Mark published:  make published ID=<id> DOI=10.xxxx/yyyy
 #
-# Fields: id, title, authors (full list, in order), type, bibtype (BibTeX entry type override,
-# e.g. inproceedings), venue, year, forthcoming (renders "2026+"), topics (slugs from
-# _data/topics.yml), links (journal, proceedings, publisher, arxiv, nber, draft, code, slides),
-# extra_links (label/url pairs), award, doi, abstract, bibtex (full override).
+# Fields: id, title, authors (full list, in order), type, venue, year, forthcoming (renders
+# "2026+"), topics (slugs from _data/topics.yml), links (journal, proceedings, publisher, arxiv,
+# nber, draft, code, slides), extra_links (label/url pairs), award, doi, abstract.
 
 - id: benmichael-2026-weighting
   title: "A Weighting Framework for Clusters as Confounders in Observational Studies"
@@ -88,7 +87,6 @@
   title: "Learning Who to Treat When Treatment is Missing"
   authors: ["Johnna Sundberg", "Rayid Ghani", "Eli Ben-Michael", "Edward Kennedy"]
   type: article
-  bibtype: inproceedings
   venue: "Conference on Uncertainty in Artificial Intelligence"
   year: 2026
   topics: [policy-learning]
@@ -101,7 +99,6 @@
   title: "AI-Assisted Variance Reduction in Randomized Experiments"
   authors: ["David Arbour", "Eli Ben-Michael", "Avi Feller", "Apoorva Lal", "Lo-Hua Yuan"]
   type: article
-  bibtype: inproceedings
   venue: "SIGKDD International Conference on Knowledge Discovery and Data Mining"
   year: 2026
   topics: [experiments, ai-llms]
@@ -127,7 +124,6 @@
   title: "Omitted Variable Bias in Language Models Under Distribution Shift"
   authors: ["Victoria Lin", "Louis-Philippe Morency", "Eli Ben-Michael"]
   type: article
-  bibtype: inproceedings
   venue: "International Conference on Machine Learning"
   year: 2026
   topics: [ai-llms, sensitivity-partial-id]
@@ -208,7 +204,6 @@
   title: "Isolated Causal Effects of Natural Language"
   authors: ["Victoria Lin", "Louis-Philippe Morency", "Eli Ben-Michael"]
   type: article
-  bibtype: inproceedings
   venue: "International Conference on Machine Learning"
   year: 2025
   topics: [ai-llms]
@@ -297,7 +292,6 @@
   title: "Optimizing Language Models for Human Preferences is a Causal Inference Problem"
   authors: ["Victoria Lin", "Eli Ben-Michael", "Louis-Philippe Morency"]
   type: article
-  bibtype: inproceedings
   venue: "Uncertainty in Artificial Intelligence"
   year: 2024
   topics: [ai-llms]
@@ -310,7 +304,6 @@
   title: "Temporal Aggregation for the Synthetic Control Method"
   authors: ["Liyang Sun", "Eli Ben-Michael", "Avi Feller"]
   type: article
-  bibtype: inproceedings
   venue: "American Economic Association Papers and Proceedings"
   year: 2024
   topics: [synthetic-control]
@@ -367,7 +360,6 @@
   title: "Text-Transport: Toward Learning Causal Effects of Natural Language"
   authors: ["Victoria Lin", "Louis-Philippe Morency", "Eli Ben-Michael"]
   type: article
-  bibtype: inproceedings
   venue: "Empirical Methods in Natural Language Processing"
   year: 2023
   topics: [ai-llms]
