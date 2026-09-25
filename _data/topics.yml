@@ -1,6 +1,15 @@
 # Topic slug -> label, grouped for the filter bar on /research/.
-# `group` sets which row a topic's button appears in; groups appear in the order they first
-# show up here, and topics within a group keep their order here.
+# `group` sets which row a topic's button appears in. Row order is set by `topic_groups`
+# in research.html (Applications, then Methods); topics within a group keep their order here.
+- slug: health-policy
+  label: Health policy
+  group: Applications
+- slug: criminal-justice
+  label: Criminal justice
+  group: Applications
+- slug: education
+  label: Education
+  group: Applications
 - slug: synthetic-control
   label: Synthetic control & panel data
   group: Methods
@@ -8,10 +17,10 @@
   label: Balancing weights
   group: Methods
 - slug: policy-learning
-  label: Policy learning & decisions
+  label: Policy learning & decision making
   group: Methods
 - slug: sensitivity-partial-id
-  label: Sensitivity & partial identification
+  label: Partial identification & sensitivity
   group: Methods
 - slug: ai-llms
   label: AI & language models
@@ -22,12 +31,3 @@
 - slug: surveys
   label: Surveys
   group: Methods
-- slug: health-policy
-  label: Health policy
-  group: Applications
-- slug: criminal-justice
-  label: Criminal justice
-  group: Applications
-- slug: education
-  label: Education
-  group: Applications
