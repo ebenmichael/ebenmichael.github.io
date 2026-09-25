@@ -79,8 +79,8 @@ img { max-width: 100%; height: auto; }
 @supports not (background: color-mix(in srgb, red 50%, blue)) {
   .site-header { background: var(--bg); }
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; flex-wrap: wrap; }
-.site-title { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+.header-inner { display: flex; align-items: center; gap: .5rem; min-height: 3.5rem; }
+.site-title { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; margin-right: auto; white-space: nowrap; }
 .site-nav { display: flex; align-items: center; gap: .15rem; flex-wrap: wrap; }
 .site-nav a {
   color: var(--muted); text-decoration: none; font-size: .95rem;
@@ -88,11 +88,32 @@ img { max-width: 100%; height: auto; }
 }
 .site-nav a:hover { color: var(--text); background: var(--surface); }
 .site-nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
-.theme-toggle {
+.header-buttons { display: flex; align-items: center; }
+.icon-button {
   border: 0; background: none; color: var(--muted); cursor: pointer;
-  padding: .4rem; border-radius: 6px; margin-left: .25rem; font-size: 1rem; line-height: 0;
+  padding: .45rem; border-radius: 6px; font-size: 1.05rem; line-height: 0;
 }
-.theme-toggle:hover { color: var(--text); background: var(--surface); }
+.icon-button:hover { color: var(--text); background: var(--surface); }
+.menu-toggle { display: none; }
+
+/* Phones: one-line header; nav becomes a dropdown behind the menu button (JS only). */
+@media (max-width: 640px) {
+  .js .menu-toggle { display: inline-block; }
+  .js .site-nav {
+    display: none;
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: .4rem 1rem .75rem;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, .06);
+  }
+  .js .site-header.nav-open .site-nav { display: flex; }
+  .js .site-nav a { font-size: 1rem; padding: .6rem .5rem; }
+  .js .site-nav a[aria-current="page"] { background: var(--surface); }
+  .menu-toggle[aria-expanded="true"] { color: var(--text); background: var(--surface); }
+  /* without JS the nav just wraps under the title */
+  html:not(.js) .header-inner { flex-wrap: wrap; }
+}
 .when-dark { display: none; }
 :root[data-theme="dark"] .when-dark { display: inline; }
 :root[data-theme="dark"] .when-light { display: none; }

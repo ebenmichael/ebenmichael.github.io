@@ -26,6 +26,7 @@
 <script>
   // Apply the saved theme before first paint to avoid a flash.
   (function () {
+    document.documentElement.className += " js";
     try {
       var t = localStorage.getItem("theme");
       if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);

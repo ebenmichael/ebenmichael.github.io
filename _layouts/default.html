@@ -8,17 +8,22 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav class="site-nav" aria-label="Main">
+      <nav class="site-nav" id="site-nav" aria-label="Main">
         {%- for item in site.data.navigation %}
         {%- assign active = false -%}
         {%- if page.url == item.url -%}{%- assign active = true -%}{%- endif %}
         <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
         {%- endfor %}
-        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+      </nav>
+      <div class="header-buttons">
+        <button class="icon-button theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
           <span class="when-light">{% include icon.html name="moon" %}</span>
           <span class="when-dark">{% include icon.html name="sun" %}</span>
         </button>
-      </nav>
+        <button class="icon-button menu-toggle" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">
+          {% include icon.html name="menu" %}
+        </button>
+      </div>
     </div>
   </header>
 
@@ -50,6 +55,23 @@
         var next = current() === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", next);
         try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+
+      // Phone-width menu: the button opens the nav as a dropdown under the header.
+      var header = document.querySelector(".site-header");
+      var menuBtn = document.querySelector(".menu-toggle");
+      function setMenu(open) {
+        header.classList.toggle("nav-open", open);
+        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+      menuBtn.addEventListener("click", function () {
+        setMenu(!header.classList.contains("nav-open"));
+      });
+      document.addEventListener("click", function (e) {
+        if (!header.contains(e.target)) setMenu(false);
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setMenu(false);
       });
     })();
   </script>
