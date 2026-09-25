@@ -197,6 +197,7 @@ main.wrap { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
 }
 .chip:hover { color: var(--text); border-color: var(--border); }
 .chip[aria-pressed="true"] { background: var(--chip-on-bg); color: var(--chip-on-text); }
+.chip.is-empty { opacity: .45; }
 .chip .count { opacity: .7; font-variant-numeric: tabular-nums; margin-left: .15rem; }
 
 /* The Abstract toggle sits in the link row; its panel opens below it. */

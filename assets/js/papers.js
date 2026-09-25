@@ -27,16 +27,31 @@
     history.replaceState(null, "", h);
   }
 
+  // A paper matches when it has every selected topic (intersection) and every search word.
+  function matches(p, topicSet, terms) {
+    var topics = (p.getAttribute("data-topics") || "").split(" ");
+    var text = p.getAttribute("data-search") || "";
+    var okTopic = Array.from(topicSet).every(function (t) { return topics.indexOf(t) !== -1; });
+    var okText = terms.every(function (t) { return text.indexOf(t) !== -1; });
+    return okTopic && okText;
+  }
+
   function apply() {
     var terms = search.value.toLowerCase().split(/\s+/).filter(Boolean);
     var shown = 0;
     papers.forEach(function (p) {
-      var topics = (p.getAttribute("data-topics") || "").split(" ");
-      var text = p.getAttribute("data-search") || "";
-      var okTopic = !active.size || topics.some(function (t) { return active.has(t); });
-      var okText = terms.every(function (t) { return text.indexOf(t) !== -1; });
-      p.hidden = !(okTopic && okText);
+      p.hidden = !matches(p, active, terms);
       if (!p.hidden) shown++;
+    });
+    // Each filter button's count = papers you'd see if it were (also) selected;
+    // buttons that would leave nothing are dimmed.
+    barChips.forEach(function (c) {
+      var withTopic = new Set(active);
+      withTopic.add(c.getAttribute("data-topic"));
+      var n = papers.filter(function (p) { return matches(p, withTopic, terms); }).length;
+      var count = c.querySelector(".count");
+      if (count) count.textContent = n;
+      c.classList.toggle("is-empty", n === 0 && !active.has(c.getAttribute("data-topic")));
     });
     // hide year labels with nothing under them, and empty sections
     sections.forEach(function (s) {
