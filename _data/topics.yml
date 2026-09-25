@@ -11,7 +11,7 @@
   label: Policy learning & decision making
   group: Methods
 - slug: sensitivity-partial-id
-  label: Sensitivity & partial identification
+  label: Partial identification & sensitivity analysis
   group: Methods
 - slug: ai-llms
   label: AI & language models

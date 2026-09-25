@@ -334,7 +334,7 @@
   type: article
   venue: "Journal of the American Statistical Association"
   year: 2024
-  topics: [policy-learning]
+  topics: [policy-learning, sensitivity-partial-id]
   links:
     journal: "https://www.tandfonline.com/doi/full/10.1080/01621459.2023.2300507"
     arxiv: "2206.10479"
