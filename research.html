@@ -2,8 +2,6 @@
 title: Research
 permalink: /research/
 scripts: [/assets/js/papers.js]
-# order of the topic rows in the filter bar; groups not listed here are added after these
-topic_groups: [Applications, Methods]
 sections:
   - {type: preprint, title: Working Papers and Preprints, id: preprints}
   - {type: article, title: Publications, id: publications, year_labels: true}
@@ -13,11 +11,7 @@ sections:
 
 <div class="filters" hidden>
   <input class="search" type="search" placeholder="Search titles, coauthors, venues…" aria-label="Search papers">
-  {%- assign groups = page.topic_groups -%}
-  {%- assign all_groups = site.data.topics | map: "group" | uniq -%}
-  {%- for g in all_groups -%}
-    {%- unless groups contains g -%}{%- assign extra = g | split: "|" -%}{%- assign groups = groups | concat: extra -%}{%- endunless -%}
-  {%- endfor -%}
+  {%- assign groups = site.data.topics | map: "group" | uniq -%}
   {%- for g in groups %}
   {%- assign group_topics = site.data.topics | where: "group", g %}
   <div class="chip-group" role="group" aria-label="{{ g }} topics">
