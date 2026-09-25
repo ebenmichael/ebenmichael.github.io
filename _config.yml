@@ -1,0 +1,43 @@
+# Site settings
+title: "Eli Ben-Michael"
+description: "Assistant Professor of Statistics & Data Science and Public Policy at Carnegie Mellon University"
+url: "https://ebenmichael.github.io"
+baseurl: ""
+lang: en-US
+
+author:
+  name: "Eli Ben-Michael"
+  # name as it appears in paper author lists; bolded on the research page
+  paper_name: "Eli Ben-Michael"
+  email: ebenmichael@cmu.edu
+  avatar: /assets/images/headshot_2_cropped.jpg
+  github: https://github.com/ebenmichael
+  scholar: https://scholar.google.com/citations?user=-Kn7gHwAAAAJ&hl=en
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - scripts
+  - vendor

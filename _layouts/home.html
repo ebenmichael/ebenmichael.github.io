@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<section class="hero">
+  <img class="avatar" src="{{ site.author.avatar | relative_url }}" alt="Photo of {{ site.author.name }}" width="220" height="220">
+  <div class="hero-text">
+    <h1>{{ site.author.name }}</h1>
+    <p class="role">{{ page.role }}</p>
+    <p class="hero-links">
+      <a href="mailto:{{ site.author.email }}">{% include icon.html name="email" %} {{ site.author.email }}</a>
+      <a href="{{ site.author.scholar }}">{% include icon.html name="scholar" %} Google Scholar</a>
+      <a href="{{ site.author.github }}">{% include icon.html name="github" %} GitHub</a>
+      <a href="{{ '/assets/pdfs/cv.pdf' | relative_url }}">CV</a>
+    </p>
+  </div>
+</section>
+
+<div class="prose">
+  {{ content }}
+</div>
+
+{%- assign recent = site.data.papers | where_exp: "p", "p.type != 'discussion'" -%}
+<section class="recent">
+  <h2>Recent papers</h2>
+  {% include paper-list.html papers=recent limit=page.recent_papers compact=true %}
+  <p><a class="more" href="{{ '/research/' | relative_url }}">All research &rarr;</a></p>
+</section>

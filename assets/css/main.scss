@@ -1,0 +1,221 @@
+---
+---
+/* ---------------------------------------------------------------- tokens */
+:root {
+  --bg: #fcfcfa;
+  --surface: #f3f2ee;
+  --text: #1d1d1f;
+  --muted: #5d5d63;
+  --faint: #8a8a90;
+  --border: #e3e2dc;
+  --accent: #9b1d2a;        /* CMU-ish deep red */
+  --accent-soft: #f6e7e8;
+  --link: #9b1d2a;
+  --chip-bg: #efeee9;
+  --chip-on-bg: #9b1d2a;
+  --chip-on-text: #fff;
+  --code-bg: #f3f2ee;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --measure: 46rem;
+  --radius: 8px;
+  color-scheme: light;
+}
+@mixin dark {
+  --bg: #141416;
+  --surface: #1c1c1f;
+  --text: #ececec;
+  --muted: #a6a6ad;
+  --faint: #7b7b83;
+  --border: #2d2d32;
+  --accent: #f08a93;
+  --accent-soft: #3a2224;
+  --link: #f4a3aa;
+  --chip-bg: #242428;
+  --chip-on-bg: #f08a93;
+  --chip-on-text: #141416;
+  --code-bg: #1c1c1f;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark; }
+}
+:root[data-theme="dark"] { @include dark; }
+
+/* ---------------------------------------------------------------- base */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--serif); line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+h1 { font-size: 2.3rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.45rem; margin: 2.5rem 0 1rem; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+code { font-family: var(--mono); font-size: .88em; }
+img { max-width: 100%; height: auto; }
+.icon { width: 1em; height: 1em; vertical-align: -0.125em; flex: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1rem; }
+.skip-link { position: absolute; left: -999px; }
+.skip-link:focus { left: 1rem; top: 1rem; background: var(--bg); padding: .5rem 1rem; z-index: 10; }
+
+/* ---------------------------------------------------------------- header / footer */
+.site-header {
+  position: sticky; top: 0; z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+@supports not (background: color-mix(in srgb, red 50%, blue)) {
+  .site-header { background: var(--bg); }
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; flex-wrap: wrap; }
+.site-title { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+.site-nav { display: flex; align-items: center; gap: .15rem; flex-wrap: wrap; }
+.site-nav a {
+  color: var(--muted); text-decoration: none; font-size: .95rem;
+  padding: .3rem .6rem; border-radius: 6px;
+}
+.site-nav a:hover { color: var(--text); background: var(--surface); }
+.site-nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
+.theme-toggle {
+  border: 0; background: none; color: var(--muted); cursor: pointer;
+  padding: .4rem; border-radius: 6px; margin-left: .25rem; font-size: 1rem; line-height: 0;
+}
+.theme-toggle:hover { color: var(--text); background: var(--surface); }
+.when-dark { display: none; }
+:root[data-theme="dark"] .when-dark { display: inline; }
+:root[data-theme="dark"] .when-light { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .when-dark { display: inline; }
+  :root:not([data-theme="light"]) .when-light { display: none; }
+}
+
+main { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
+.site-footer { border-top: 1px solid var(--border); color: var(--faint); font-size: .9rem; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; padding-top: 1.25rem; padding-bottom: 1.25rem; }
+.social { display: flex; gap: 1rem; font-size: 1.15rem; }
+.social a { color: var(--faint); }
+.social a:hover { color: var(--text); }
+
+/* ---------------------------------------------------------------- prose */
+.page-header { margin-bottom: 1.5rem; }
+.prose > :first-child { margin-top: 0; }
+.prose ul { padding-left: 1.25rem; }
+.prose li { margin: .2rem 0; }
+.prose .note {
+  background: var(--surface); border-left: 3px solid var(--accent);
+  padding: .9rem 1.1rem; border-radius: 0 var(--radius) var(--radius) 0; font-size: .95rem;
+}
+
+/* ---------------------------------------------------------------- home */
+.hero { display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; }
+.avatar { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; flex: none; border: 1px solid var(--border); }
+.hero h1 { margin-bottom: .25rem; }
+.role { color: var(--muted); margin: 0 0 .9rem; }
+.hero-links { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; margin: 0; font-size: .95rem; }
+.hero-links a { display: inline-flex; align-items: center; gap: .35rem; text-decoration: none; }
+.hero-links a:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .hero { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .avatar { width: 128px; height: 128px; }
+  h1 { font-size: 1.9rem; }
+}
+.more { font-weight: 600; text-decoration: none; }
+
+/* ---------------------------------------------------------------- papers */
+.papers { list-style: none; padding: 0; margin: 0; }
+.paper { padding: 1rem 0; border-top: 1px solid var(--border); }
+.papers > .paper:first-child { border-top: 0; }
+.year-label {
+  font-family: var(--serif); font-weight: 600; color: var(--faint);
+  font-size: .95rem; margin: 1.75rem 0 0;
+}
+.papers > .year-label:first-child { margin-top: 0; }
+.paper-title { font-size: 1.08rem; margin: 0 0 .2rem; }
+.paper-title a { color: var(--text); text-decoration: none; }
+.paper-title a:hover { color: var(--link); text-decoration: underline; }
+.paper-authors, .paper-venue { margin: 0; font-size: .93rem; color: var(--muted); }
+.paper-authors strong { color: var(--text); font-weight: 600; }
+.forthcoming { margin-left: 1px; }
+.paper-award {
+  display: inline-block; margin: .4rem 0 0; font-size: .8rem; font-weight: 600;
+  color: var(--accent); background: var(--accent-soft); padding: .1rem .55rem; border-radius: 999px;
+}
+.paper-actions { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .55rem; }
+.paper-actions:empty { display: none; }
+.pill {
+  display: inline-block; font-size: .8rem; font-weight: 600; line-height: 1.4;
+  padding: .15rem .6rem; border-radius: 999px; text-decoration: none;
+  border: 1px solid var(--border); color: var(--text); background: var(--bg);
+}
+.pill:hover { border-color: var(--accent); color: var(--accent); }
+.pill--quiet { font-weight: 500; color: var(--muted); }
+.paper-topics { margin: .45rem 0 0; font-size: .8rem; color: var(--faint); }
+.topic-link {
+  font: inherit; border: 0; background: none; padding: 0; cursor: pointer; color: var(--faint);
+}
+.topic-link + .topic-link::before { content: "·"; margin: 0 .45rem; color: var(--faint); }
+.topic-link:hover { color: var(--link); text-decoration: underline; }
+.topic-link.is-on { color: var(--accent); font-weight: 600; }
+
+.chip {
+  font: inherit; font-size: .78rem; line-height: 1.4; cursor: pointer;
+  border: 1px solid transparent; border-radius: 999px; padding: .12rem .6rem;
+  background: var(--chip-bg); color: var(--muted);
+}
+.chip:hover { color: var(--text); border-color: var(--border); }
+.chip[aria-pressed="true"] { background: var(--chip-on-bg); color: var(--chip-on-text); }
+.chip .count { opacity: .7; font-variant-numeric: tabular-nums; margin-left: .15rem; }
+
+/* Abstract / BibTeX toggles sit in the link row; their panels open below it. */
+.pill--toggle { font-family: inherit; cursor: pointer; color: var(--muted); font-weight: 500; }
+.pill--toggle::after { content: " +"; }
+.pill--toggle[aria-expanded="true"] { background: var(--surface); color: var(--text); }
+.pill--toggle[aria-expanded="true"]::after { content: " \2212"; }
+.panel { font-size: .9rem; margin-top: .5rem; }
+.panel[hidden] { display: none; }
+.abstract p { margin: 0; line-height: 1.6; }
+.bibtex-box { position: relative; }
+.bibtex-box pre {
+  margin: 0; padding: .8rem 1rem; overflow-x: auto; font-size: .78rem; line-height: 1.5;
+  background: var(--code-bg); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.copy {
+  position: absolute; top: .45rem; right: .45rem; font: inherit; font-size: .75rem;
+  border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+  border-radius: 6px; padding: .1rem .5rem; cursor: pointer;
+}
+.copy:hover { color: var(--text); }
+
+/* ---------------------------------------------------------------- research filters */
+.filters {
+  position: sticky; top: 3.5rem; z-index: 4; background: var(--bg);
+  padding: .75rem 0 .5rem; margin-bottom: .5rem; border-bottom: 1px solid var(--border);
+}
+.search {
+  width: 100%; font: inherit; font-size: .95rem; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: .5rem .8rem; margin-bottom: .6rem;
+}
+.search::placeholder { color: var(--faint); }
+.chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+.filter-status { margin: .5rem 0 0; font-size: .85rem; color: var(--muted); min-height: 1.2em; }
+.clear { font: inherit; border: 0; background: none; color: var(--link); cursor: pointer; padding: 0; text-decoration: underline; }
+.section-count { font-family: var(--sans); font-size: .8rem; font-weight: 500; color: var(--faint); vertical-align: middle; margin-left: .25rem; }
+.paper-section h2 { margin-top: 2.25rem; }
+.paper-section[hidden], .paper[hidden], .year-label[hidden] { display: none; }
+.software-list { padding-left: 1.2rem; }
+@media (max-width: 640px) {
+  .filters { position: static; }
+}

@@ -1,0 +1,569 @@
+# Every paper on the site. /research/ groups these by `type`
+# (preprint | article | chapter | discussion), newest year first; ties keep file order.
+#
+# Add a paper:     make paper ARXIV=2607.14346 TOPICS=policy-learning   (or DOI=10.xxxx/yyyy)
+# Mark published:  make published ID=<id> DOI=10.xxxx/yyyy
+#
+# Fields: id, title, authors (full list, in order), type, bibtype (BibTeX entry type override,
+# e.g. inproceedings), venue, year, forthcoming (renders "2026+"), topics (slugs from
+# _data/topics.yml), links (journal, proceedings, publisher, arxiv, nber, draft, code, slides),
+# extra_links (label/url pairs), award, doi, abstract, bibtex (full override).
+
+- id: benmichael-2026-weighting
+  title: "A Weighting Framework for Clusters as Confounders in Observational Studies"
+  authors: ["Eli Ben-Michael", "Avi Feller", "Luke Keele"]
+  type: preprint
+  venue: ""
+  year: 2026
+  topics: [balancing-weights]
+  links:
+    arxiv: "2602.05041"
+  abstract: >-
+    When units in observational studies are clustered in groups, such as students in schools or patients in hospitals, researchers often address confounding by adjusting for cluster-level covariates or cluster membership. In this paper, we develop a unified weighting framework that clarifies how different estimation methods control two distinct sources of imbalance: global balance (differences between treated and control units across clusters) and local balance (differences within clusters). We show that inverse propensity score weighting (IPW) with a random effects propensity score model -- the current standard in the literature -- targets only global balance and constant level shifts across clusters, but imposes no constraints on local balance. We then present two approaches that target both forms of balance. First, hierarchical balancing weights directly control global and local balance through a constrained optimization problem. Second, building on the recently proposed Generalized Mundlak approach, we develop a novel Mundlak balancing weights estimator that adjusts for cluster-level sufficient statistics rather than cluster indicators; this approach can accommodate small clusters where all units are treated or untreated. Critically, these approaches rest on different assumptions: hierarchical balancing weights require only that treatment is ignorable given covariates and cluster membership, while Mundlak methods additionally require an exponential family structure. We then compare these methods in a simulation study and in two applications in education and health services research that exhibit very different cluster structures.
+
+- id: benmichael-2025-partial
+  title: "Partial Identification via Conditional Linear Programs: Estimation and Policy learning"
+  authors: ["Eli Ben-Michael"]
+  type: preprint
+  venue: ""
+  year: 2025
+  topics: [sensitivity-partial-id, policy-learning]
+  links:
+    arxiv: "2506.12215"
+  abstract: >-
+    Many important quantities of interest are only partially identified from observable data: the data can limit them to a set of plausible values, but not uniquely determine them. This paper develops a unified framework for covariate-assisted estimation, inference, and decision making in partial identification problems where the parameter of interest satisfies a series of linear constraints, conditional on covariates. In such settings, bounds on the parameter can be written as expectations of solutions to conditional linear programs that optimize a linear function subject to linear constraints, where both the objective function and the constraints may depend on covariates and need to be estimated from data. Examples include estimands involving the joint distributions of potential outcomes, policy learning with inequality-aware value functions, and instrumental variable settings. We propose two de-biased estimators for bounds defined by conditional linear programs. The first directly solves the conditional linear programs with plugin estimates and uses output from standard LP solvers to de-bias the plugin estimate, avoiding the need for computationally demanding vertex enumeration of all possible solutions for symbolic bounds. The second uses entropic regularization to create smooth approximations to the conditional linear programs, trading a small amount of approximation error for improved estimation and computational efficiency. We establish conditions for asymptotic normality of both estimators, show that both estimators are robust to first-order errors in estimating the conditional constraints and objectives, and construct Wald-type confidence intervals for the partially identified parameters. These results also extend to policy learning problems where the value of a decision policy is only partially identified. We apply our methods to a study on the effects of Medicaid enrollment.
+
+- id: levis-2024-intervention
+  title: "Intervention Effects Based on Potential Benefit"
+  authors: ["Alexander W. Levis", "Eli Ben-Michael", "Edward H. Kennedy"]
+  type: preprint
+  venue: ""
+  year: 2024
+  topics: [policy-learning, sensitivity-partial-id]
+  links:
+    arxiv: "2405.08727"
+  abstract: >-
+    Optimal treatment rules are mappings from individual patient characteristics to tailored treatment assignments that maximize mean outcomes. In this work, we introduce a conditional potential benefit (CPB) metric that measures the expected improvement under an optimally chosen treatment compared to the status quo, within covariate strata. The potential benefit combines (i) the magnitude of the treatment effect, and (ii) the propensity for subjects to naturally select a suboptimal treatment. As a consequence, heterogeneity in the CPB can provide key insights into the mechanism by which a treatment acts and/or highlight potential barriers to treatment access or adverse effects. Moreover, we demonstrate that CPB is the natural prioritization score for individualized treatment policies when intervention capacity is constrained. That is, in the resource-limited setting where treatment options are freely accessible, but the ability to intervene on a portion of the target population is constrained (e.g., if the population is large, and follow-up and encouragement of treatment uptake is labor-intensive), targeting subjects with highest CPB maximizes the mean outcome. Focusing on this resource-limited setting, we derive formulas for optimal constrained treatment rules, and for any given budget, quantify the loss compared to the optimal unconstrained rule. We describe sufficient identification assumptions, and propose nonparametric, robust, and efficient estimators of the proposed quantities emerging from our framework. Finally, we illustrate our methodology using data from a prospective cohort study in which we assess the impact of intensive care unit transfer on mortality.
+
+- id: zhang-2022-safe
+  title: "Safe Policy Learning under Regression Discontinuity Designs with Multiple Cutoffs"
+  authors: ["Yi Zhang", "Eli Ben-Michael", "Kosuke Imai"]
+  type: preprint
+  venue: ""
+  year: 2022
+  topics: [policy-learning]
+  award: "ASA Social Statistics Section Student Paper Award (Yi Zhang)"
+  links:
+    arxiv: "2208.13323"
+  abstract: >-
+    The regression discontinuity (RD) design is widely used for program evaluation with observational data. The primary focus of the existing literature has been the estimation of the local average treatment effect at the existing treatment cutoff. In contrast, we consider policy learning under the RD design. Because the treatment assignment mechanism is deterministic, learning better treatment cutoffs requires extrapolation. We develop a robust optimization approach to finding optimal treatment cutoffs that improve upon the existing ones. We first decompose the expected utility into point-identifiable and unidentifiable components. We then propose an efficient doubly-robust estimator for the identifiable parts. To account for the unidentifiable components, we leverage the existence of multiple cutoffs that are common under the RD design. Specifically, we assume that the heterogeneity in the conditional expectations of potential outcomes across different groups vary smoothly along the running variable. Under this assumption, we minimize the worst case utility loss relative to the status quo policy. The resulting new treatment cutoffs have a safety guarantee that they will not yield a worse overall outcome than the existing cutoffs. Finally, we establish the asymptotic regret bounds for the learned policy using semi-parametric efficiency theory. We apply the proposed methodology to empirical and simulated data sets.
+
+- id: benmichael-2021-balancing
+  title: "The Balancing Act in Causal Inference"
+  authors: ["Eli Ben-Michael", "Avi Feller", "David A. Hirshberg", "José R. Zubizarreta"]
+  type: preprint
+  venue: ""
+  year: 2021
+  topics: [balancing-weights]
+  links:
+    arxiv: "2110.14831"
+  abstract: >-
+    The idea of covariate balance is at the core of causal inference. Inverse propensity weights play a central role because they are the unique set of weights that balance the covariate distributions of different treatment groups. We discuss two broad approaches to estimating these weights: the more traditional one, which fits a propensity score model and then uses the reciprocal of the estimated propensity score to construct weights, and the balancing approach, which estimates the inverse propensity weights essentially by the method of moments, finding weights that achieve balance in the sample. We review ideas from the causal inference, sample surveys, and semiparametric estimation literatures, with particular attention to the role of balance as a sufficient condition for robust inference. We focus on the inverse propensity weighting and augmented inverse propensity weighting estimators for the average treatment effect given strong ignorability and consider generalizations for a broader class of problems including policy evaluation and the estimation of individualized treatment effects.
+
+- id: shen-2026-forest
+  title: "Forest Kernel Balancing Weights: Outcome-Guided Features for Causal Inference"
+  authors: ["Andy A. Shen", "Eli Ben-Michael", "Avi Feller", "Luke Keele", "Jared Murray"]
+  type: article
+  venue: "Statistics in Medicine"
+  year: 2026
+  topics: [balancing-weights]
+  links:
+    journal: "https://onlinelibrary.wiley.com/doi/full/10.1002/sim.70720"
+    arxiv: "2512.11751"
+  doi: "10.1002/sim.70720"
+  abstract: >-
+    While balancing covariates between groups is central for observational causal inference, selecting which features to balance remains a challenging problem. Kernel balancing is a promising approach that first estimates a kernel that captures similarity across units and then balances a (possibly low-dimensional) summary of that kernel, indirectly learning important features to balance. In this paper, we propose forest kernel balancing, which leverages the underappreciated fact that tree-based machine learning models, namely random forests and Bayesian additive regression trees (BART), implicitly estimate a kernel based on the co-occurrence of observations in the same terminal leaf node. Thus, even though the resulting kernel is solely a function of baseline features, the selected nonlinearities and other interactions are important for predicting the outcome -- and therefore are important for addressing confounding. Through simulations and applied illustrations, we show that forest kernel balancing leads to meaningful computational and statistical improvement relative to standard kernel methods, which do not incorporate outcome information when learning features.
+
+- id: sundberg-2026-learning
+  title: "Learning Who to Treat When Treatment is Missing"
+  authors: ["Johnna Sundberg", "Rayid Ghani", "Eli Ben-Michael", "Edward Kennedy"]
+  type: article
+  bibtype: inproceedings
+  venue: "Conference on Uncertainty in Artificial Intelligence"
+  year: 2026
+  topics: [policy-learning]
+  links:
+    arxiv: "2607.14346"
+  abstract: >-
+    Policy learning methods are increasingly used to inform treatment allocation under budget constraints. Most proposed methods assume complete treatment data, yet applications frequently suffer from missingness that can bias estimates and lead to suboptimal policies. We address this gap by extending efficient estimators for average treatment effect (ATE) estimation to policy value and conditional average treatment effect (CATE) estimation under missing at random (MAR) and missing completely conditionally at random (MCCAR) treatment data. Through asymptotic efficiency analysis, we prove that the MAR estimator, which leverages partially-observed units, is both valid and more efficient than the MCCAR estimator when MCCAR assumptions hold. This result provides formal justification for preferring MAR-based estimation in policy learning under both missing data settings. Our comprehensive experiments using synthetic and semi-synthetic datasets confirm that correctly specifying the missingness mechanism is crucial: misspecified estimators remain biased regardless of sample size, while our estimators achieve near-oracle performance when assumptions are satisfied. Our work provides practitioners with theoretically grounded, empirically validated tools for robust policy learning in the presence of missing treatment data.
+
+- id: arbour-2026-ai
+  title: "AI-Assisted Variance Reduction in Randomized Experiments"
+  authors: ["David Arbour", "Eli Ben-Michael", "Avi Feller", "Apoorva Lal", "Lo-Hua Yuan"]
+  type: article
+  bibtype: inproceedings
+  venue: "SIGKDD International Conference on Knowledge Discovery and Data Mining"
+  year: 2026
+  topics: [experiments, ai-llms]
+  links:
+    arxiv: "2606.08853"
+  abstract: >-
+    Generative AI and large language models can produce realistic predictions of human behavior from rich, unstructured inputs with little to no task-specific training data. Recent work uses these “digital twin” predictions to supplement human responses in surveys and experiments. We study the special case of using AI-generated predictions to reduce variance in randomized experiments. We argue that doing so requires no new estimators and that researchers can simply include AI predictions as covariates in standard regression adjustment, analogous to adjusting for a prognostic score. A benefit of this approach is a “do no harm” property whereby the adjusted estimator reverts to the unadjusted difference in means when predictions are uninformative. Other methods, such as variants of prediction-powered inference, do not have this guarantee. We provide implementation guidance, including how to obtain continuous scores from discrete LLM outputs and how to use LLMs to featurize unstructured inputs as auxiliary covariates. We demonstrate these ideas in simulations and three empirical applications: a survey mega-study, an email marketing A/B test, and a large-scale technology platform experiment. Overall, efficiency gains are real if modest, with greater benefits in studies that contain substantial text and other unstructured data. We also confirm the do no harm property empirically. Given these gains and limited costs, we recommend adjusting for AI-generated predictions as a regular empirical practice.
+
+- id: jiang-2026-longitudinal
+  title: "Longitudinal Causal Inference with Selective Eligibility"
+  authors: ["Zhichao Jiang", "Eli Ben-Michael", "D. James Greiner", "Ryan Halen", "Kosuke Imai"]
+  type: article
+  venue: "Annals of Applied Statistics"
+  year: 2026
+  forthcoming: true
+  topics: [criminal-justice]
+  links:
+    arxiv: "2410.17864"
+  abstract: >-
+    Dropout poses a significant challenge to causal inference in longitudinal studies with time-varying treatments. However, existing research does not simultaneously address dropout and time-varying treatments. We examine selective eligibility, an important yet overlooked source of non-ignorable dropout in such settings. This problem arises when a unit's prior treatment history influences its eligibility for subsequent treatments, a common scenario in medical and other settings. We propose a general methodological framework for longitudinal causal inference with selective eligibility. By focusing on a subgroup of units who would become eligible for treatment given a specific past treatment sequence, we define the time-specific eligible treatment effect and expected number of outcome events under a treatment sequence of interest. Under a generalized version of sequential ignorability, we derive two nonparametric identification formulae, each leveraging different parts of the observed data distribution. We then derive the efficient influence function of each causal estimand, yielding the corresponding doubly robust estimator. Finally, we apply the proposed methodology to an impact evaluation of a pre-trial risk assessment instrument in the criminal justice system, in which selective eligibility arises due to recidivism.
+
+- id: lin-2026-omitted
+  title: "Omitted Variable Bias in Language Models Under Distribution Shift"
+  authors: ["Victoria Lin", "Louis-Philippe Morency", "Eli Ben-Michael"]
+  type: article
+  bibtype: inproceedings
+  venue: "International Conference on Machine Learning"
+  year: 2026
+  topics: [ai-llms, sensitivity-partial-id]
+  links:
+    arxiv: "2602.16784"
+  abstract: >-
+    Despite their impressive performance on a wide variety of tasks, modern language models remain susceptible to distribution shifts, exhibiting brittle behavior when evaluated on data that differs in distribution from their training data. In this paper, we describe how distribution shifts in language models can be separated into observable and unobservable components, and we discuss how established approaches for dealing with distribution shift address only the former. Importantly, we identify that the resulting omitted variable bias from unobserved variables can compromise both evaluation and optimization in language models. To address this challenge, we introduce a framework that maps the strength of the omitted variables to bounds on the worst-case generalization performance of language models under distribution shift. In empirical experiments, we show that using these bounds directly in language model evaluation and optimization provides more principled measures of out-of-distribution performance, improves true out-of-distribution performance relative to standard distribution shift adjustment methods, and further enables inference about the strength of the omitted variables when target distribution labels are available.
+
+- id: keele-2026-balancing
+  title: "Balancing Weights for Estimating Treatment Effects in Educational Studies"
+  authors: ["Luke Keele", "Eli Ben-Michael", "Matthew Lenard", "Lindsay Page"]
+  type: article
+  venue: "Journal of Research on Educational Effectiveness"
+  year: 2026
+  topics: [balancing-weights, education]
+  links:
+    journal: "https://www.tandfonline.com/doi/full/10.1080/19345747.2025.2483775"
+  doi: "10.1080/19345747.2025.2483775"
+
+- id: gemmill-2026-methodological
+  title: "Methodological Considerations for Investigating the Impact of Abortion Restrictions on Outcomes using Aggregate Panel Data"
+  authors: ["Alison Gemmill", "Alexander Franks", "Avi Feller", "Elizabeth A Stuart", "Eli Ben-Michael", "Suzanne O Bell"]
+  type: article
+  venue: "American Journal of Epidemiology"
+  year: 2026
+  forthcoming: true
+  topics: [synthetic-control, health-policy]
+  links:
+    journal: "https://academic.oup.com/aje/advance-article-abstract/doi/10.1093/aje/kwag032/8504393"
+  doi: "10.1093/aje/kwag032"
+  abstract: >-
+    Dramatic changes in the US abortion policy landscape have led to growing interest in studying the health and social impacts of abortion bans. Many studies of population-level impacts necessarily rely on panel designs using aggregate state-level data to strengthen causal inference, yet such analyses risk pitfalls if they apply generic evaluation frameworks that overlook the complexity of the US abortion context and relevant outcomes. This commentary provides practical guidance for researchers engaged in panel studies of abortion policy, as well as for peer reviewers who may be less familiar with the methodological and substantive considerations in this area. Drawing from recent work, we highlight abortion-specific challenges that require attention, including time-varying confounding and violation of parallel trends, COVID-era disruptions, data suppression, spillover effects, and subgroup heterogeneity. We further recommend assessing sensitivity to including Texas, given its earlier implementation of abortion restrictions and potential outsized influence on results. Ultimately, we emphasize that rigorous evaluation of abortion policies requires thoughtful study design, context-specific considerations, and collaboration between methodologists and subject-matter experts.
+
+- id: huang-2026-sensitivity
+  title: "Sensitivity Analysis for Clustered Observational Studies with an Application to the Effectiveness of Magnet Nursing Hospitals"
+  authors: ["Melody Huang", "Eli Ben-Michael", "Matthew McHugh", "Luke Keele"]
+  type: article
+  venue: "Journal of the Royal Statistical Society, Series A"
+  year: 2026
+  forthcoming: true
+  topics: [sensitivity-partial-id, health-policy]
+  links:
+    journal: "https://academic.oup.com/jrsssa/advance-article/doi/10.1093/jrsssa/qnag002/8475349?searchresult=1&login=true"
+    arxiv: "2504.21617"
+  doi: "10.1093/jrsssa/qnag002"
+  abstract: >-
+    In a clustered observational study, treatment is assigned to groups and all units within the group are exposed to the treatment. Here, we use a clustered observational study (COS) design to estimate the effectiveness of Magnet Nursing certificates for emergency surgery patients. Recent research has introduced specialized weighting estimators for the COS design that balance baseline covariates at the unit and cluster level. These methods allow researchers to adjust for observed confounders, but are sensitive to unobserved confounding. In this paper, we develop new sensitivity analysis methods tailored to weighting estimators for COS designs. We provide several key contributions. First, we introduce a key bias decomposition, tailored to the specific confounding structure that arises in a COS. Second, we develop a sensitivity framework for weighted COS designs that constrain the error in the underlying weights. We introduce both a marginal sensitivity model and a variance-based sensitivity model, and extend both to accommodate multiple estimands. Finally, we propose amplification and benchmarking methods to better interpret the results. Throughout, we illustrate our proposed methods by analyzing the effectiveness of Magnet nursing hospitals.
+
+- id: jia-2026-bayesian
+  title: "Bayesian Safe Policy Learning with Chance Constrained Optimization: Application to Military Security Assessment during the Vietnam War"
+  authors: ["Zeyang Jia", "Eli Ben-Michael", "Kosuke Imai"]
+  type: article
+  venue: "Journal of the Royal Statistical Society, Series A"
+  year: 2026
+  topics: [policy-learning]
+  links:
+    journal: "https://academic.oup.com/jrsssa/advance-article/doi/10.1093/jrsssa/qnaf122/8223172?searchresult=1"
+    arxiv: "2307.08840"
+  doi: "10.1093/jrsssa/qnaf122"
+  abstract: >-
+    Algorithmic decisions and recommendations are used in many high-stakes decision-making settings such as criminal justice, medicine, and public policy. We investigate whether it would have been possible to improve a security assessment algorithm employed during the Vietnam War, using outcomes measured immediately after its introduction in late 1969. This empirical application raises several methodological challenges that frequently arise in high-stakes algorithmic decision-making. First, before implementing a new algorithm, it is essential to characterize and control the risk of yielding worse outcomes than the existing algorithm. Second, the existing algorithm is deterministic, and learning a new algorithm requires transparent extrapolation. Third, the existing algorithm involves discrete decision tables that are difficult to optimize over. To address these challenges, we introduce the Average Conditional Risk (ACRisk), which first quantifies the risk that a new algorithmic policy leads to worse outcomes for subgroups of individual units and then averages this over the distribution of subgroups. We also propose a Bayesian policy learning framework that maximizes the posterior expected value while controlling the posterior expected ACRisk. This framework separates the estimation of heterogeneous treatment effects from policy optimization, enabling flexible estimation of effects and optimization over complex policy classes. We characterize the resulting chance-constrained optimization problem as a constrained linear programming problem. Our analysis shows that compared to the actual algorithm used during the Vietnam War, the learned algorithm assesses most regions as more secure and emphasizes economic and political factors over military factors.
+
+- id: benmichael-2025-does
+  title: "Does AI Help Humans Make Better Decisions? A Methodological Framework for Experimental Evaluation"
+  authors: ["Eli Ben-Michael", "D. James Greiner", "Melody Huang", "Kosuke Imai", "Zhichao Jiang", "Sooahn Shin"]
+  type: article
+  venue: "Proceedings of the National Academy of Sciences"
+  year: 2025
+  topics: [ai-llms, experiments, criminal-justice]
+  links:
+    journal: "https://www.pnas.org/doi/10.1073/pnas.2505106122"
+    arxiv: "2403.12108"
+  doi: "10.1073/pnas.2505106122"
+  abstract: >-
+    The use of Artificial Intelligence (AI), or more generally data-driven algorithms, has become ubiquitous in today's society. Yet, in many cases and especially when stakes are high, humans still make final decisions. The critical question, therefore, is whether AI helps humans make better decisions compared to a human-alone or AI-alone system. We introduce a new methodological framework to empirically answer this question with a minimal set of assumptions. We measure a decision maker's ability to make correct decisions using standard classification metrics based on the baseline potential outcome. We consider a single-blinded and unconfounded treatment assignment, where the provision of AI-generated recommendations is assumed to be randomized across cases with humans making final decisions. Under this study design, we show how to compare the performance of three alternative decision-making systems--human-alone, human-with-AI, and AI-alone. Importantly, the AI-alone system includes any individualized treatment assignment, including those that are not used in the original study. We also show when AI recommendations should be provided to a human-decision maker, and when one should follow such recommendations. We apply the proposed methodology to our own randomized controlled trial evaluating a pretrial risk assessment instrument. We find that the risk assessment recommendations do not improve the classification accuracy of a judge's decision to impose cash bail. Furthermore, we find that replacing a human judge with algorithms--the risk assessment score and a large language model in particular--leads to a worse classification performance.
+
+- id: lin-2025-isolated
+  title: "Isolated Causal Effects of Natural Language"
+  authors: ["Victoria Lin", "Louis-Philippe Morency", "Eli Ben-Michael"]
+  type: article
+  bibtype: inproceedings
+  venue: "International Conference on Machine Learning"
+  year: 2025
+  topics: [ai-llms]
+  links:
+    arxiv: "2410.14812"
+  abstract: >-
+    As language technologies become widespread, it is important to understand how changes in language affect reader perceptions and behaviors. These relationships may be formalized as the isolated causal effect of some focal language-encoded intervention (e.g., factual inaccuracies) on an external outcome (e.g., readers' beliefs). In this paper, we introduce a formal estimation framework for isolated causal effects of language. We show that a core challenge of estimating isolated effects is the need to approximate all non-focal language outside of the intervention. Drawing on the principle of omitted variable bias, we provide measures for evaluating the quality of both non-focal language approximations and isolated effect estimates themselves. We find that poor approximation of non-focal language can lead to bias in the corresponding isolated effect estimates due to omission of relevant variables, and we show how to assess the sensitivity of effect estimates to such bias along the two key axes of fidelity and overlap. In experiments on semi-synthetic and real-world data, we validate the ability of our framework to correctly recover isolated effects and demonstrate the utility of our proposed measures.
+
+- id: benmichael-2025-safe
+  title: "Safe Policy Learning through Extrapolation: Application to Pre-trial Risk Assessment"
+  authors: ["Eli Ben-Michael", "D. James Greiner", "Kosuke Imai", "Zhichao Jiang"]
+  type: article
+  venue: "Journal of the American Statistical Association"
+  year: 2025
+  topics: [policy-learning, criminal-justice]
+  links:
+    journal: "https://www.tandfonline.com/doi/full/10.1080/01621459.2025.2489135"
+    arxiv: "2109.11679"
+  doi: "10.1080/01621459.2025.2489135"
+  abstract: >-
+    Algorithmic recommendations and decisions have become ubiquitous in today's society. Many of these data-driven policies, especially in the realm of public policy, are based on known, deterministic rules to ensure their transparency and interpretability. We examine a particular case of algorithmic pre-trial risk assessments in the US criminal justice system, which provide deterministic classification scores and recommendations to help judges make release decisions. Our goal is to analyze data from a unique field experiment on an algorithmic pre-trial risk assessment to investigate whether the scores and recommendations can be improved. Unfortunately, prior methods for policy learning are not applicable because they require existing policies to be stochastic. We develop a maximin robust optimization approach that partially identifies the expected utility of a policy, and then finds a policy that maximizes the worst-case expected utility. The resulting policy has a statistical safety property, limiting the probability of producing a worse policy than the existing one, under structural assumptions about the outcomes. Our analysis of data from the field experiment shows that we can safely improve certain components of the risk assessment instrument by classifying arrestees as lower risk under a wide range of utility specifications, though the analysis is not informative about several components of the instrument.
+
+- id: sun-2025-multiple
+  title: "Using Multiple Outcomes to Improve the Synthetic Control Method"
+  authors: ["Liyang Sun", "Eli Ben-Michael", "Avi Feller"]
+  type: article
+  venue: "Review of Economics and Statistics"
+  year: 2025
+  topics: [synthetic-control]
+  links:
+    journal: "https://direct.mit.edu/rest/article/doi/10.1162/rest_a_01592/128898/Using-Multiple-Outcomes-to-Improve-the-Synthetic"
+    arxiv: "2311.16260"
+  doi: "10.1162/rest_a_01592"
+  abstract: >-
+    When there are multiple outcome series of interest, Synthetic Control analyses typically proceed by estimating separate weights for each outcome. In this paper, we instead propose estimating a common set of weights across outcomes, by balancing either a vector of all outcomes or an index or average of them. Under a low-rank factor model, we show that these approaches lead to lower bias bounds than separate weights, and that averaging leads to further gains when the number of outcomes grows. We illustrate this via a re-analysis of the impact of the Flint water crisis on educational outcomes.
+
+- id: bell-2025-us
+  title: "US Abortion Bans and Fertility"
+  authors: ["Suzanne O. Bell", "Alexander M. Franks", "David Arbour", "Selena Anjur-Dietrich", "Elizabeth A. Stuart", "Eli Ben-Michael", "Avi Feller", "Alison Gemmill"]
+  type: article
+  venue: "Journal of the American Medical Association"
+  year: 2025
+  topics: [synthetic-control, health-policy]
+  links:
+    journal: "https://jamanetwork.com/journals/jama/fullarticle/2830297"
+  extra_links:
+    - {label: "NYT Coverage", url: "https://www.nytimes.com/2025/02/13/health/abortion-bans-infant-mortality.html"}
+    - {label: "CNN Coverage", url: "https://www.cnn.com/2025/02/13/health/abortion-bans-lead-to-births-infant-deaths/index.html"}
+    - {label: "USA Today Coverage", url: "https://www.usatoday.com/story/life/health-wellness/2025/02/13/infants-die-abortion-bans-jama-study/78496779007/"}
+  doi: "10.1001/jama.2024.28527"
+  abstract: >-
+    Importance Abortion bans may lead to births among those who are unable to overcome barriers to abortion. The population-level effects of these policies, particularly their unequal impacts across subpopulations in the US, remain unclear. Objective To assess heterogeneity in the association of abortion bans with changes in fertility in the US, within and across states. Design, Setting, and Participants Drawing from birth certificate and US Census Bureau data from 2012 through 2023 for all 50 states and the District of Columbia, this study used a bayesian panel data model to evaluate state-by-subgroup-specific changes in fertility associated with complete or 6-week abortion bans in 14 US states. The average percent and absolute change in the fertility rate among females aged 15 through 44 years was estimated overall and by state, and within and across states by age, race and ethnicity, marital status, education, and insurance payer. Exposure Complete or 6-week abortion ban. Main outcome and Measures Fertility rate (births per 1000 reproductive-aged females) overall and by subgroups. Results There were an estimated 1.01 (95% credible interval [CrI], 0.45-1.64) additional births above expectation per 1000 females aged 15 through 44 years (reproductive age) in states following adoption of abortion bans (60.55 observed vs 59.54 expected; 1.70% increase; 95% CrI, 0.75%-2.78%), equivalent to 22 180 excess births, with evidence of variation by state and subgroup. Estimated differences above expectation were largest for racially minoritized individuals (≈2.0%), unmarried individuals (1.79%), individuals younger than 35 years (≈2.0%), Medicaid beneficiaries (2.41%), and those without college degrees (high school diploma, 2.36%; some college, 1.58%), particularly in southern states. Differences in race and ethnicity and education across states explain most of the variability in the state-level association between abortion bans and fertility rates. Conclusion and Relevance These findings provide evidence that fertility rates in states with abortion bans were higher than would have been expected in the absence of these policies, with the largest estimated differences among subpopulations experiencing the greatest structural disadvantages and in states with among the worst maternal and child health and well-being outcomes.
+
+- id: gemmill-2025-us
+  title: "US Abortion Bans and Infant Mortality"
+  authors: ["Alison Gemmill", "Alexander M. Franks", "Selena Anjur-Dietrich", "Amy Ozinsky", "David Arbour", "Elizabeth A. Stuart", "Eli Ben-Michael", "Avi Feller", "Suzanne O. Bell"]
+  type: article
+  venue: "Journal of the American Medical Association"
+  year: 2025
+  topics: [synthetic-control, health-policy]
+  links:
+    journal: "https://jamanetwork.com/journals/jama/fullarticle/2830298"
+  extra_links:
+    - {label: "NYT Coverage", url: "https://www.nytimes.com/2025/02/13/health/abortion-bans-infant-mortality.html"}
+    - {label: "CNN Coverage", url: "https://www.cnn.com/2025/02/13/health/abortion-bans-lead-to-births-infant-deaths/index.html"}
+    - {label: "USA Today Coverage", url: "https://www.usatoday.com/story/life/health-wellness/2025/02/13/infants-die-abortion-bans-jama-study/78496779007/"}
+  doi: "10.1001/jama.2024.28517"
+  abstract: >-
+    Importance The impact of recent abortion bans on infant mortality is not fully understood. There is also limited evidence on how these bans may interact with long-standing racial and ethnic disparities in infant health. Objective To examine the association of abortion bans with changes in infant mortality and to compare this association in racial and ethnic groups based on analyses within and across states. Design, Setting, and Participants This population-based, serial, cross-sectional study used a bayesian panel model to examine infant mortality rates in 14 states that implemented complete or 6-week abortion bans and compared them with predictions of infant mortality rates based on pre-ban mortality rates and states without bans. Data included all live births and infant deaths from all 50 US states and the District of Columbia for 2012 through 2023. Models accounted for temporal trends and state-specific factors, with analyses stratified by race and ethnicity, timing of death, and cause of death. Exposure Complete or 6-week abortion bans. Main Outcome and Measures Infant mortality rate, analyzed overall and by subgroups. Results The analysis found higher than expected infant mortality in states after adoption of abortion bans (observed vs expected, 6.26 vs 5.93 per 1000 live births; absolute increase, 0.33 [95% credible interval (CrI), 0.14-0.51]; relative increase, 5.60% [95% CrI, 2.43%-8.73%]). This resulted in an estimated 478 excess infant deaths in the 14 states with bans during the months affected by bans. The estimated increases were higher among non-Hispanic Black infants compared with other racial and ethnic groups, with 11.81 observed vs 10.66 expected infant deaths per 1000 live births, an absolute increase of 1.15 (95% CrI, 0.53-1.81) and relative increase of 10.98% (95% CrI, 4.87%-17.89%). The observed infant mortality rate due to congenital anomalies was 1.37 vs 1.24 expected (absolute increase, 0.13 [95% CrI, 0.04-0.21]; relative increase, 10.87% [95% CrI, 3.39%-18.08%]), while the rate not due to congenital anomalies was 4.89 observed vs 4.69 expected (absolute increase, 0.20 [95% CrI, 0.02-0.38]; relative increase, 4.23% [95% CrI, 0.49%-8.23%]). Texas had a dominant influence on the overall results and there were larger increases in southern vs nonsouthern states. Conclusions US states that adopted abortion bans had higher than expected infant mortality after the bans took effect. The estimated relative increases in infant mortality were larger for deaths with congenital causes and among groups that had higher than average infant mortality rates at baseline, including Black infants and those in southern states.
+
+- id: benmichael-2024-estimating
+  title: "Estimating Racial Disparities in Emergency General Surgery"
+  authors: ["Eli Ben-Michael", "Avi Feller", "Rachel Kelz", "Luke Keele"]
+  type: article
+  venue: "Journal of the Royal Statistical Society, Series A"
+  year: 2024
+  topics: [balancing-weights, health-policy]
+  links:
+    journal: "https://academic.oup.com/jrsssa/advance-article/doi/10.1093/jrsssa/qnae095/7773858"
+    arxiv: "2209.04321"
+  doi: "10.1093/jrsssa/qnae095"
+  abstract: >-
+    Research documents that Black patients experience worse general surgery outcomes than white patients in the United States. In this paper, we focus on an important but less-examined category: the surgical treatment of emergency general surgery (EGS) conditions, which refers to medical emergencies where the injury is "endogenous," such as a burst appendix. Our goal is to assess racial disparities for common outcomes after EGS treatment using an administrative database of hospital claims in New York, Florida, and Pennsylvania, and to understand the extent to which differences are attributable to patient-level risk factors versus hospital-level factors. To do so, we use a class of linear weighting estimators that re-weight white patients to have a similar distribution of baseline characteristics as Black patients. This framework nests many common approaches, including matching and linear regression, but offers important advantages over these methods in terms of controlling imbalance between groups, minimizing extrapolation, and reducing computation time. Applying this approach to the claims data, we find that disparities estimates that adjust for the admitting hospital are substantially smaller than estimates that adjust for patient baseline characteristics only, suggesting that hospital-specific factors are important drivers of racial disparities in EGS outcomes.
+
+- id: lin-2024-optimizing
+  title: "Optimizing Language Models for Human Preferences is a Causal Inference Problem"
+  authors: ["Victoria Lin", "Eli Ben-Michael", "Louis-Philippe Morency"]
+  type: article
+  bibtype: inproceedings
+  venue: "Uncertainty in Artificial Intelligence"
+  year: 2024
+  topics: [ai-llms]
+  links:
+    arxiv: "2402.14979"
+  abstract: >-
+    As large language models (LLMs) see greater use in academic and commercial settings, there is increasing interest in methods that allow language models to generate texts aligned with human preferences. In this paper, we present an initial exploration of language model optimization for human preferences from direct outcome datasets, where each sample consists of a text and an associated numerical outcome measuring the reader's response. We first propose that language model optimization should be viewed as a causal problem to ensure that the model correctly learns the relationship between the text and the outcome. We formalize this causal language optimization problem, and we develop a method--causal preference optimization (CPO)--that solves an unbiased surrogate objective for the problem. We further extend CPO with doubly robust CPO (DR-CPO), which reduces the variance of the surrogate objective while retaining provably strong guarantees on bias. Finally, we empirically demonstrate the effectiveness of (DR-)CPO in optimizing state-of-the-art LLMs for human preferences on direct outcome data, and we validate the robustness of DR-CPO under difficult confounding conditions.
+
+- id: sun-2024-temporal
+  title: "Temporal Aggregation for the Synthetic Control Method"
+  authors: ["Liyang Sun", "Eli Ben-Michael", "Avi Feller"]
+  type: article
+  bibtype: inproceedings
+  venue: "American Economic Association Papers and Proceedings"
+  year: 2024
+  topics: [synthetic-control]
+  links:
+    journal: "https://www.aeaweb.org/articles?id=10.1257/pandp.20241050"
+    arxiv: "2401.12084"
+  doi: "10.1257/pandp.20241050"
+  abstract: >-
+    The synthetic control method (SCM) is a popular approach for estimating the impact of a treatment on a single unit with panel data. Two challenges arise with higher frequency data (e.g., monthly versus yearly): (1) achieving excellent pre-treatment fit is typically more challenging; and (2) overfitting to noise is more likely. Aggregating data over time can mitigate these problems but can also destroy important signal. In this paper, we bound the bias for SCM with disaggregated and aggregated outcomes and give conditions under which aggregating tightens the bounds. We then propose finding weights that balance both disaggregated and aggregated series.
+
+- id: keele-2024-approximate
+  title: "Approximate Balancing Weights for Clustered Observational Study Designs"
+  authors: ["Luke Keele", "Eli Ben-Michael", "Lindsay Page"]
+  type: article
+  venue: "Statistics in Medicine"
+  year: 2024
+  topics: [balancing-weights, education]
+  links:
+    journal: "https://onlinelibrary.wiley.com/doi/10.1002/sim.10054?af=R"
+    arxiv: "2301.05275"
+  doi: "10.1002/sim.10054"
+  abstract: >-
+    In a clustered observational study, a treatment is assigned to groups and all units within the group are exposed to the treatment. We develop a new method for statistical adjustment in clustered observational studies using approximate balancing weights, a generalization of inverse propensity score weights that solve a convex optimization problem to find a set of weights that directly minimize a measure of covariate imbalance, subject to an additional penalty on the variance of the weights. We tailor the approximate balancing weights optimization problem to both adjustment sets by deriving an upper bound on the mean square error for each case and finding weights that minimize this upper bound, linking the level of covariate balance to a bound on the bias. We implement the procedure by specializing the bound to a random cluster-level effects model, leading to a variance penalty that incorporates the signal signal-to-noise ratio and penalizes the weight on individuals and the total weight on groups differently according to the the intra-class correlation.
+
+- id: benmichael-2024-policy
+  title: "Policy Learning with Asymmetric Counterfactual Utilities"
+  authors: ["Eli Ben-Michael", "Kosuke Imai", "Zhichao Jiang"]
+  type: article
+  venue: "Journal of the American Statistical Association"
+  year: 2024
+  topics: [policy-learning, criminal-justice]
+  links:
+    journal: "https://www.tandfonline.com/doi/full/10.1080/01621459.2023.2300507"
+    arxiv: "2206.10479"
+  doi: "10.1080/01621459.2023.2300507"
+  abstract: >-
+    Data-driven decision making plays an important role even in high stakes settings like medicine and public policy. Learning optimal policies from observed data requires a careful formulation of the utility function whose expected value is maximized across a population. Although researchers typically use utilities that depend on observed outcomes alone, in many settings the decision maker's utility function is more properly characterized by the joint set of potential outcomes under all actions. For example, the Hippocratic principle to "do no harm" implies that the cost of causing death to a patient who would otherwise survive without treatment is greater than the cost of forgoing life-saving treatment. We consider optimal policy learning with asymmetric counterfactual utility functions of this form that consider the joint set of potential outcomes. We show that asymmetric counterfactual utilities lead to an unidentifiable expected utility function, and so we first partially identify it. Drawing on statistical decision theory, we then derive minimax decision rules by minimizing the maximum expected utility loss relative to different alternative policies. We show that one can learn minimax loss decision rules from observed data by solving intermediate classification problems, and establish that the finite sample excess expected utility loss of this procedure is bounded by the regret of these intermediate classifiers. We apply this conceptual framework and methodology to the decision about whether or not to use right heart catheterization for patients with possible pulmonary hypertension.
+
+- id: benmichael-2024-multilevel
+  title: "Multilevel Calibration Weighting for Survey Data"
+  authors: ["Eli Ben-Michael", "Avi Feller", "Erin Hartman"]
+  type: article
+  venue: "Political Analysis"
+  year: 2024
+  topics: [surveys, balancing-weights]
+  links:
+    journal: "https://www.cambridge.org/core/journals/political-analysis/article/abs/multilevel-calibration-weighting-for-survey-data/CCB1183BA82E7589F4187DE23406C153"
+    arxiv: "2102.09052"
+  doi: "10.1017/pan.2023.9"
+  abstract: >-
+    In the November 2016 U.S. presidential election, many state level public opinion polls, particularly in the Upper Midwest, incorrectly predicted the winning candidate. One leading explanation for this polling miss is that the precipitous decline in traditional polling response rates led to greater reliance on statistical methods to adjust for the corresponding bias -- and that these methods failed to adjust for important interactions between key variables like education, race, and geographic region. Finding calibration weights that account for important interactions remains challenging with traditional survey methods: raking typically balances the margins alone, while post-stratification, which exactly balances all interactions, is only feasible for a small number of variables. In this paper, we propose multilevel calibration weighting, which enforces tight balance constraints for marginal balance and looser constraints for higher-order interactions. This incorporates some of the benefits of post-stratification while retaining the guarantees of raking. We then correct for the bias due to the relaxed constraints via a flexible outcome model; we call this approach Double Regression with Post-stratification (DRP). We characterize the asymptotic properties of these estimators and show that the proposed calibration approach has a dual representation as a multilevel model for survey response. We then use these tools to to re-assess a large-scale survey of voter intention in the 2016 U.S. presidential election, finding meaningful gains from the proposed methods. The approach is available in the multical R package.
+
+- id: lin-2023-text
+  title: "Text-Transport: Toward Learning Causal Effects of Natural Language"
+  authors: ["Victoria Lin", "Louis-Philippe Morency", "Eli Ben-Michael"]
+  type: article
+  bibtype: inproceedings
+  venue: "Empirical Methods in Natural Language Processing"
+  year: 2023
+  topics: [ai-llms]
+  links:
+    proceedings: "https://aclanthology.org/2023.emnlp-main.82/"
+    arxiv: "2310.20697"
+  abstract: >-
+    As language technologies gain prominence in real-world settings, it is important to understand how changes to language affect reader perceptions. This can be formalized as the causal effect of varying a linguistic attribute (e.g., sentiment) on a reader's response to the text. In this paper, we introduce Text-Transport, a method for estimation of causal effects from natural language under any text distribution. Current approaches for valid causal effect estimation require strong assumptions about the data, meaning the data from which one can estimate valid causal effects often is not representative of the actual target domain of interest. To address this issue, we leverage the notion of distribution shift to describe an estimator that transports causal effects between domains, bypassing the need for strong assumptions in the target domain. We derive statistical guarantees on the uncertainty of this estimator, and we report empirical results and analyses that support the validity of Text-Transport across data settings. Finally, we use Text-Transport to study a realistic setting--hate speech on social media--in which causal effects do shift significantly between text domains, demonstrating the necessity of transport when conducting causal inference on natural language.
+
+- id: benmichael-2023-balancing
+  title: "Using Balancing Weights to Target the Treatment Effect on the Treated when Overlap is Poor"
+  authors: ["Eli Ben-Michael", "Luke Keele"]
+  type: article
+  venue: "Epidemiology"
+  year: 2023
+  topics: [balancing-weights]
+  links:
+    journal: "https://journals.lww.com/epidem/Fulltext/2023/09000/Using_Balancing_Weights_to_Target_the_Treatment.6.aspx"
+    arxiv: "2210.01763"
+  abstract: >-
+    Inverse probability weights are commonly used in epidemiology to estimate causal effects in observational studies. Researchers can typically focus on either the average treatment effect or the average treatment effect on the treated with inverse probability weighting estimators. However, when overlap between the treated and control groups is poor, this can produce extreme weights that can result in biased estimates and large variances. One alternative to inverse probability weights are overlap weights, which target the population with the most overlap on observed characteristics. While estimates based on overlap weights produce less bias in such contexts, the causal estimand can be difficult to interpret. One alternative to inverse probability weights are balancing weights, which directly target imbalances during the estimation process. Here, we explore whether balancing weights allow analysts to target the average treatment effect on the treated in cases where inverse probability weights are biased due to poor overlap. We conduct three simulation studies and an empirical application. We find that in many cases, balancing weights allow the analyst to still target the average treatment effect on the treated even when overlap is poor. We show that while overlap weights remain a key tool for estimating causal effects, more familiar estimands can be targeted by using balancing weights instead of inverse probability weights.
+
+- id: soriano-2023-interpretable
+  title: "Interpretable Sensitivity Analysis for Balancing Weights"
+  authors: ["Dan Soriano", "Eli Ben-Michael", "Peter J. Bickel", "Avi Feller", "Samuel D. Pimentel"]
+  type: article
+  venue: "Journal of the Royal Statistical Society, Series A"
+  year: 2023
+  topics: [sensitivity-partial-id, balancing-weights]
+  links:
+    journal: "https://academic.oup.com/jrsssa/advance-article/doi/10.1093/jrsssa/qnad032/7083941?searchresult=1"
+    arxiv: "2102.13218"
+  doi: "10.1093/jrsssa/qnad032"
+  abstract: >-
+    Assessing sensitivity to unmeasured confounding is an important step in observational studies, which typically estimate effects under the assumption that all confounders are measured. In this paper, we develop a sensitivity analysis framework for balancing weights estimators, an increasingly popular approach that solves an optimization problem to obtain weights that directly minimizes covariate imbalance. In particular, we adapt a sensitivity analysis framework using the percentile bootstrap for a broad class of balancing weights estimators. We prove that the percentile bootstrap procedure can, with only minor modifications, yield valid confidence intervals for causal effects under restrictions on the level of unmeasured confounding. We also propose an amplification to allow for interpretable sensitivity parameters in the balancing weights framework. We illustrate our method through extensive real data examples.
+
+- id: benmichael-2023-varying
+  title: "Varying Impacts of Letters of Recommendation on College Admissions"
+  authors: ["Eli Ben-Michael", "Avi Feller", "Jesse Rothstein"]
+  type: article
+  venue: "Annals of Applied Statistics"
+  year: 2023
+  topics: [education, balancing-weights]
+  award: "ASA Social Statistics Section Student Paper Award"
+  links:
+    journal: "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-4/Varying-impacts-of-letters-of-recommendation-on-college-admissions/10.1214/23-AOAS1740.full"
+    arxiv: "2008.04394"
+    nber: "https://www.nber.org/papers/w30940"
+  doi: "10.1214/23-AOAS1740"
+  abstract: >-
+    In a pilot program during the 2016-17 admissions cycle, the University of California, Berkeley invited many applicants for freshman admission to submit letters of recommendation. We use this pilot as the basis for an observational study of the impact of submitting letters of recommendation on subsequent admission, with the goal of estimating how impacts vary across pre-defined subgroups. Understanding this variation is challenging in observational studies, however, because estimated impacts reflect both actual treatment effect variation and differences in covariate balance across groups. To address this, we develop balancing weights that directly optimize for “local balance” within subgroups while maintaining global covariate balance between treated and control units. We then show that this approach has a dual representation as a form of inverse propensity score weighting with a hierarchical propensity score model. In the UC Berkeley pilot study, our proposed approach yields excellent local and global balance, unlike more traditional weighting methods, which fail to balance covariates within subgroups. We find that the impact of letters of recommendation increases with the predicted probability of admission, with mixed evidence of differences for under-represented minority applicants.
+
+- id: lu-2023-it
+  title: "Is It Who You Are or Where You Are? Accounting for Compositional Differences in Cross-Site Treatment Variation"
+  authors: ["Benjamin Lu", "Eli Ben-Michael", "Avi Feller", "Luke Miratrix"]
+  type: article
+  venue: "Journal of Educational and Behavioral Statistics"
+  year: 2023
+  topics: [education, balancing-weights]
+  links:
+    journal: "https://doi.org/10.3102/10769986231155427"
+    arxiv: "2103.14765"
+  doi: "10.3102/10769986231155427"
+  abstract: >-
+    Multisite trials, in which treatment is randomized separately in multiple sites, offer a unique opportunity to disentangle treatment effect variation due to "compositional" differences in the distributions of unit-level features from variation due to "contextual" differences in site-level features. In particular, if we can re-weight (or "transport") each site to have a common distribution of unit-level covariates, the remaining effect variation captures contextual differences across sites. In this paper, we develop a framework for transporting effects in multisite trials using approximate balancing weights, where the weights are chosen to directly optimize unit-level covariate balance between each site and the target distribution. We first develop our approach for the general setting of transporting the effect of a single-site trial. We then extend our method to multisite trials, assess its performance via simulation, and use it to analyze a series of multisite trials of welfare-to-work programs. Our method is available in the balancer R package.
+
+- id: benmichael-2023-estimating
+  title: "Estimating the effects of a California gun control program with Multitask Gaussian Processes"
+  authors: ["Eli Ben-Michael", "David Arbour", "Avi Feller", "Alex Franks", "Steven Raphael"]
+  type: article
+  venue: "Annals of Applied Statistics"
+  year: 2023
+  topics: [synthetic-control]
+  links:
+    journal: "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-2/Estimating-the-effects-of-a-California-gun-control-program-with/10.1214/22-AOAS1654.short"
+    arxiv: "2110.07006"
+  doi: "10.1214/22-AOAS1654"
+  abstract: >-
+    Gun violence is a critical public safety concern in the United States. In 2006 California implemented a unique firearm monitoring program, the Armed and Prohibited Persons System (APPS), to address gun violence in the state. The APPS program first identifies those firearm owners who become prohibited from owning one due to federal or state law, then confiscates their firearms. Our goal is to assess the effect of APPS on California murder rates using annual, state-level crime data across the US for the years before and after the introduction of the program. To do so, we adapt a non-parametric Bayesian approach, multitask Gaussian Processes (MTGPs), to the panel data setting. MTGPs allow for flexible and parsimonious panel data models that nest many existing approaches and allow for direct control over both dependence across time and dependence across units, as well as natural uncertainty quantification. We extend this approach to incorporate non-Normal outcomes, auxiliary covariates, and multiple outcome series, which are all important in our application. We also show that this approach has attractive Frequentist properties, including a representation as a weighting estimator with separate weights over units and time periods. Applying this approach, we find that the increased monitoring and enforcement from the APPS program substantially decreased homicides in California. We also find that the effect on murder is driven entirely by declines in gun-related murder with no measurable effect on non-gun murder. Estimated cost per murder avoided are substantially lower than conventional estimates of the value of a statistical life, suggesting a very high benefit-cost ratio for this enforcement effort.
+
+- id: keele-2023-hospital
+  title: "Hospital Quality Risk Standardization via Approximate Balancing Weights"
+  authors: ["Luke Keele", "Eli Ben-Michael", "Avi Feller", "Rachel Kelz", "Luke Miratrix"]
+  type: article
+  venue: "Annals of Applied Statistics"
+  year: 2023
+  topics: [balancing-weights, health-policy]
+  links:
+    journal: "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-2/Hospital-quality-risk-standardization-via-approximate-balancing-weights/10.1214/22-AOAS1629.full"
+    arxiv: "2007.09056"
+  doi: "10.1214/22-AOAS1629"
+  abstract: >-
+    Comparing outcomes across hospitals, often to identify underperforming hospitals, is a critical task in health services research. However, naive comparisons of average outcomes, such as surgery complication rates, can be misleading because hospital case mixes differ -- a hospital's overall complication rate may be lower due to more effective treatments or simply because the hospital serves a healthier population overall. In this paper, we develop a method of “direct standardization” where we re-weight each hospital patient population to be representative of the overall population and then compare the weighted averages across hospitals. Adapting methods from survey sampling and causal inference, we find weights that directly control for imbalance between the hospital patient mix and the target population, even across many patient attributes. Critically, these balancing weights can also be tuned to preserve sample size for more precise estimates. We also derive principled measures of statistical precision, and use outcome modeling and Bayesian shrinkage to increase precision and account for variation in hospital size. We demonstrate these methods using claims data from Pennsylvania, Florida, and New York, estimating standardized hospital complication rates for general surgery patients. We conclude with a discussion of how to detect low performing hospitals.
+
+- id: haber-2022-problems
+  title: "Problems with evidence assessment in COVID-19 health policy impact evaluation: A systematic review of study design and evidence strength"
+  authors: ["Noah A. Haber", "Emma Clarke-Deelder", "Avi Feller", "Emily R. Smith", "Joshua A. Salomon", "Benjamin MacCormack-Gelles", "Elizabeth M. Stone", "Clara Bolster-Foucault", "Jamie R. Daw", "Laura Anne Hatfield", "Carrie E. Fry", "Christopher B. Boyer", "Eli Ben-Michael", "Caroline M. Joyce", "Beth S. Linas", "Ian Schmid", "Eric H. Au", "Sarah E. Wieten", "Brooke Jarrett", "Cathrine Axfors", "Van Thu Nguyen", "Beth Ann Griffin", "Alyssa Bilinski", "Elizabeth A. Stuart"]
+  type: article
+  venue: "BMJ Open"
+  year: 2022
+  topics: [health-policy]
+  links:
+    journal: "https://bmjopen.bmj.com/content/12/1/e053820"
+  doi: "10.1136/bmjopen-2021-053820"
+  abstract: >-
+    Introduction Assessing the impact of COVID-19 policy is critical for informing future policies. However, there are concerns about the overall strength of COVID-19 impact evaluation studies given the circumstances for evaluation and concerns about the publication environment. Methods We included studies that were primarily designed to estimate the quantitative impact of one or more implemented COVID-19 policies on direct SARS-CoV-2 and COVID-19 outcomes. After searching PubMed for peer-reviewed articles published on 26 November 2020 or earlier and screening, all studies were reviewed by three reviewers first independently and then to consensus. The review tool was based on previously developed and released review guidance for COVID-19 policy impact evaluation. Results After 102 articles were identified as potentially meeting inclusion criteria, we identified 36 published articles that evaluated the quantitative impact of COVID-19 policies on direct COVID-19 outcomes. Nine studies were set aside because the study design was considered inappropriate for COVID-19 policy impact evaluation (n=8 pre/post; n=1 cross-sectional), and 27 articles were given a full consensus assessment. 20/27 met criteria for graphical display of data, 5/27 for functional form, 19/27 for timing between policy implementation and impact, and only 3/27 for concurrent changes to the outcomes. Only 4/27 were rated as overall appropriate. Including the 9 studies set aside, reviewers found that only four of the 36 identified published and peer-reviewed health policy impact evaluation studies passed a set of key design checks for identifying the causal impact of policies on COVID-19 outcomes. Discussion The reviewed literature directly evaluating the impact of COVID-19 policies largely failed to meet key design criteria for inference of sufficient rigour to be actionable by policy-makers. More reliable evidence review is needed to both identify and produce policy-actionable evidence, alongside the recognition that actionable evidence is often unlikely to be feasible.
+
+- id: benmichael-2022-synthetic
+  title: "Synthetic Controls with Staggered Adoption"
+  authors: ["Eli Ben-Michael", "Avi Feller", "Jesse Rothstein"]
+  type: article
+  venue: "Journal of the Royal Statistical Society, Series B"
+  year: 2022
+  topics: [synthetic-control]
+  links:
+    journal: "https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12448"
+    arxiv: "1912.03290"
+    nber: "https://www.nber.org/papers/w28886"
+  doi: "10.1111/rssb.12448"
+  abstract: >-
+    Staggered adoption of policies by different units at different times creates promising opportunities for observational causal inference. Estimation remains challenging, however, and common regression methods can give misleading results. A promising alternative is the synthetic control method (SCM), which finds a weighted average of control units that closely balances the treated unit's pre-treatment outcomes. In this paper, we generalize SCM, originally designed to study a single treated unit, to the staggered adoption setting. We first bound the error for the average effect and show that it depends on both the imbalance for each treated unit separately and the imbalance for the average of the treated units. We then propose "partially pooled" SCM weights to minimize a weighted combination of these measures; approaches that focus only on balancing one of the two components can lead to bias. We extend this approach to incorporate unit-level intercept shifts and auxiliary covariates. We assess the performance of the proposed method via extensive simulations and apply our results to the question of whether teacher collective bargaining leads to higher school spending, finding minimal impacts. We implement the proposed method in the augsynth R package.
+
+- id: benmichael-2021-augmented
+  title: "The Augmented Synthetic Control Method"
+  authors: ["Eli Ben-Michael", "Avi Feller", "Jesse Rothstein"]
+  type: article
+  venue: "Journal of the American Statistical Association"
+  year: 2021
+  topics: [synthetic-control]
+  links:
+    journal: "https://www.tandfonline.com/doi/abs/10.1080/01621459.2021.1929245"
+    arxiv: "1811.04170"
+    nber: "https://www.nber.org/papers/w28885"
+  doi: "10.1080/01621459.2021.1929245"
+  abstract: >-
+    The synthetic control method (SCM) is a popular approach for estimating the impact of a treatment on a single unit in panel data settings. The "synthetic control" is a weighted average of control units that balances the treated unit's pre-treatment outcomes as closely as possible. A critical feature of the original proposal is to use SCM only when the fit on pre-treatment outcomes is excellent. We propose Augmented SCM as an extension of SCM to settings where such pre-treatment fit is infeasible. Analogous to bias correction for inexact matching, Augmented SCM uses an outcome model to estimate the bias due to imperfect pre-treatment fit and then de-biases the original SCM estimate. Our main proposal, which uses ridge regression as the outcome model, directly controls pre-treatment fit while minimizing extrapolation from the convex hull. This estimator can also be expressed as a solution to a modified synthetic controls problem that allows negative weights on some donor units. We bound the estimation error of this approach under different data generating processes, including a linear factor model, and show how regularization helps to avoid over-fitting to noise. We demonstrate gains from Augmented SCM with extensive simulation studies and apply this framework to estimate the impact of the 2012 Kansas tax cuts on economic growth. We implement the proposed method in the new augsynth R package.
+
+- id: benmichael-2021-trial
+  title: "A trial emulation approach for policy evaluations with group-level longitudinal data"
+  authors: ["Eli Ben-Michael", "Avi Feller", "Elizabeth A. Stuart"]
+  type: article
+  venue: "Epidemiology"
+  year: 2021
+  topics: [synthetic-control, health-policy]
+  links:
+    journal: "https://journals.lww.com/epidem/Abstract/2021/07000/A_Trial_Emulation_Approach_for_Policy_Evaluations.10.aspx"
+    arxiv: "2011.05826"
+  abstract: >-
+    To limit the spread of the novel coronavirus, governments across the world implemented extraordinary physical distancing policies, such as stay-at-home orders, and numerous studies aim to estimate their effects. Many statistical and econometric methods, such as difference-in-differences, leverage repeated measurements and variation in timing to estimate policy effects, including in the COVID-19 context. While these methods are less common in epidemiology, epidemiologic researchers are well accustomed to handling similar complexities in studies of individual-level interventions. "Target trial emulation" emphasizes the need to carefully design a non-experimental study in terms of inclusion and exclusion criteria, covariates, exposure definition, and outcome measurement -- and the timing of those variables. We argue that policy evaluations using group-level longitudinal ("panel") data need to take a similar careful approach to study design, which we refer to as "policy trial emulation." This is especially important when intervention timing varies across jurisdictions; the main idea is to construct target trials separately for each "treatment cohort" (states that implement the policy at the same time) and then aggregate. We present a stylized analysis of the impact of state-level stay-at-home orders on total coronavirus cases. We argue that estimates from panel methods -- with the right data and careful modeling and diagnostics -- can help add to our understanding of many policies, though doing so is often challenging.
+
+- id: elser-2019-layoffs
+  title: "Layoffs and the mental health and safety of remaining workers: a difference-in-differences analysis of the US aluminium industry"
+  authors: ["Holly Elser", "Eli Ben-Michael", "David Rehkopf", "Sepideh Modrek", "Ellen A Eisen", "Mark R Cullen"]
+  type: article
+  venue: "Journal of Epidemiology and Community Health"
+  year: 2019
+  topics: [health-policy]
+  links:
+    journal: "http://dx.doi.org/10.1136/jech-2018-211774"
+  doi: "10.1136/jech-2018-211774"
+  abstract: >-
+    background Relatively few studies have examined the effects of layoffs on remaining workers, although the effects of layoffs and downsizing events may extend beyond those employees who lose their jobs. Methods We examined the effects of layoffs on mental healthcare utilisation and injury risk among workers at 30 US plants between 2003 and 2013. We defined layoffs as reductions in the hourly workforce of 20% or more at each plant. Using a difference-indifferences approach, we compared the change in outcomes during layoffs versus the same 3-month period 1 year previously, accounting for secular trends with control plants. results Our study population included 15 502 workers and 7 layoff events between 2003 and 2013. Layoffs were associated with only minor decreases in injuries (−0.006, 95% CI −0.013 to 0.001). The probability of outpatient visits related to mental health increased by 1% during layoffs (0.010, 95% CI 0.003 to 0.017), and the probability of mental health-related prescriptions increased by 1.4% (0.014, 95% CI −0.0006 to 0.027). Among women, the increase in outpatient visits was more pronounced (0.017, 95% CI 0.003 to 0.031). Increased prescription utilisation appeared attributable primarily to opioid use (0.016, 95% CI 0.005 to 0.027). Conclusion Our results indicate an association between layoffs and remaining workers' mental health and safety, although changes mental healthcare utilisation may reflect both changes in underlying mental health and changes in care-seeking. Future research on concordance of service utilisation and underlying health may yield valuable insight into the experiences employed workers in the wake of layoffs.
+
+- id: benmichael-2026-statistical
+  title: "Statistical Methods to Estimate the Impact of Gun Policy on Gun Violence"
+  authors: ["Eli Ben-Michael", "Mitchell L. Doucette", "Avi Feller", "Alexander D. McCourt", "Elizabeth Stuart"]
+  type: chapter
+  venue: "Gun Violence: The Statistical Issues"
+  year: 2026
+  topics: [synthetic-control]
+  links:
+    publisher: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003430773-8/statistical-methods-estimate-impact-gun-policy-gun-violence-eli-ben-michael-mitchell-doucette-alexander-mccourt-avi-feller-elizabeth-stuart?context=ubx&refId=5fd8a91f-3dd8-4bc9-8f99-89e8f9eb8579"
+    draft: "https://arxiv.org/abs/2404.11506"
+  doi: "10.1201/9781003430773-8"
+  abstract: >-
+    Gun violence is a critical public health and safety concern in the United States. There is considerable variability in policy proposals meant to curb gun violence, ranging from increasing gun availability to deter potential assailants (e.g., concealed carry laws or arming school teachers) to restricting access to firearms (e.g., universal background checks or banning assault weapons). Many studies use state-level variation in the enactment of these policies in order to quantify their effect on gun violence. In this paper, we discuss the policy trial emulation framework for evaluating the impact of these policies, and show how to apply this framework to estimating impacts via difference-in-differences and synthetic controls when there is staggered adoption of policies across jurisdictions, estimating the impacts of right-to-carry laws on violent crime as a case study.
+
+- id: cohn-2023-balancing
+  title: "Balancing Weights for Causal Inference"
+  authors: ["Eric R. Cohn", "Eli Ben-Michael", "Avi Feller", "José R. Zubizarreta"]
+  type: chapter
+  venue: "Handbook of Matching and Weighting Adjustments for Causal Inference"
+  year: 2023
+  topics: [balancing-weights]
+  links:
+    publisher: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003102670-16/balancing-weights-causal-inference-eric-cohn-eli-ben-michael-avi-feller-josé-zubizarreta"
+  doi: "10.1201/9781003102670-16"
+
+- id: benmichael-2026-discussion
+  title: "Discussion of \"Matrix Completion When Missing is not at Random and its Applications in Causal Panel Data Models\""
+  authors: ["Eli Ben-Michael", "Avi Feller"]
+  type: discussion
+  venue: "Journal of the American Statistical Association"
+  year: 2026
+  topics: [synthetic-control]
+  links:
+    arxiv: "2602.21314"
+  abstract: >-
+    Choi and Yuan (2025) propose a novel approach to applying matrix completion to the problem of estimating causal effects in panel data. The key insight is that even in the presence of structured patterns of missing data -- i.e. selection into treatment -- matrix completion can be effective if the number of treated observations is small relative to the number of control observations. We applaud the authors for their insightful and interesting paper. We discuss this proposal from two complementary perspectives. First, we situate their proposal as an example of a "split-apply-combine" strategy that underlies many modern panel data estimators, including difference-in-differences and synthetic control approaches. Second, we discuss the issue of the statistical "last mile problem" -- the gap between theory and practice -- and offer suggestions on how to partially address it. We conclude by considering the challenges of estimating the impacts of public policies using panel data and apply the approach to a study on the effect of right to carry laws on violent crime.

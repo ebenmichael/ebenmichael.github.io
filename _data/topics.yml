@@ -1,0 +1,21 @@
+# Topic slug -> label. Order here is the order of the filter chips on /research/.
+- slug: synthetic-control
+  label: Synthetic control & panel data
+- slug: balancing-weights
+  label: Balancing weights
+- slug: policy-learning
+  label: Policy learning & decisions
+- slug: sensitivity-partial-id
+  label: Sensitivity & partial identification
+- slug: ai-llms
+  label: AI & language models
+- slug: experiments
+  label: Experiments
+- slug: surveys
+  label: Surveys
+- slug: health-policy
+  label: Health policy
+- slug: criminal-justice
+  label: Criminal justice
+- slug: education
+  label: Education

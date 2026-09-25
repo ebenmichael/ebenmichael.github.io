@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav class="site-nav" aria-label="Main">
+        {%- for item in site.data.navigation %}
+        {%- assign active = false -%}
+        {%- if page.url == item.url -%}{%- assign active = true -%}{%- endif %}
+        <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+        {%- endfor %}
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="when-light">{% include icon.html name="moon" %}</span>
+          <span class="when-dark">{% include icon.html name="sun" %}</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+      <span class="social">
+        <a href="mailto:{{ site.author.email }}" aria-label="Email">{% include icon.html name="email" %}</a>
+        <a href="{{ site.author.scholar }}" aria-label="Google Scholar">{% include icon.html name="scholar" %}</a>
+        <a href="{{ site.author.github }}" aria-label="GitHub">{% include icon.html name="github" %}</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.querySelector(".theme-toggle");
+      function current() {
+        var t = root.getAttribute("data-theme");
+        if (t) return t;
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      btn.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+      });
+    })();
+  </script>
+  {%- if page.scripts %}
+  {%- for s in page.scripts %}
+  <script src="{{ s | relative_url }}" defer></script>
+  {%- endfor %}
+  {%- endif %}
+</body>
+</html>

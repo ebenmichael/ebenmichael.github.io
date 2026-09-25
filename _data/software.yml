@@ -1,0 +1,6 @@
+- name: augsynth
+  description: R package for augmented synthetic controls and synthetic controls with staggered adoption
+  url: https://github.com/ebenmichael/augsynth
+- name: multical
+  description: R package for multilevel calibration
+  url: https://github.com/ebenmichael/multical

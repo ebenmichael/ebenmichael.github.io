@@ -1,0 +1,21 @@
+{%- comment -%}
+  Renders papers grouped by year (newest first), keeping file order within a year.
+  Params: papers (array), year_labels (bool), limit (optional int)
+{%- endcomment -%}
+{%- assign years = include.papers | map: "year" | uniq | sort | reverse -%}
+{%- assign shown = 0 -%}
+{%- assign limit = include.limit | default: 10000 -%}
+<ol class="papers">
+{%- for y in years -%}
+  {%- assign in_year = include.papers | where: "year", y -%}
+  {%- if include.year_labels and shown < limit %}
+  <li class="year-label" aria-hidden="true">{{ y }}</li>
+  {%- endif -%}
+  {%- for paper in in_year -%}
+    {%- if shown < limit %}
+    {% include paper.html paper=paper compact=include.compact %}
+    {%- assign shown = shown | plus: 1 -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor %}
+</ol>

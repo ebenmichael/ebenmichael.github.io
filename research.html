@@ -1,0 +1,42 @@
+---
+title: Research
+permalink: /research/
+scripts: [/assets/js/papers.js]
+sections:
+  - {type: preprint, title: Working Papers and Preprints, id: preprints}
+  - {type: article, title: Publications, id: publications, year_labels: true}
+  - {type: chapter, title: Book Chapters, id: chapters}
+  - {type: discussion, title: Discussions, id: discussions}
+---
+
+<div class="filters" hidden>
+  <input class="search" type="search" placeholder="Search titles, coauthors, venues…" aria-label="Search papers">
+  <div class="chips" role="group" aria-label="Filter by topic">
+    {%- for t in site.data.topics -%}
+      {%- assign n = site.data.papers | where_exp: "p", "p.topics contains t.slug" | size -%}
+      {%- if n > 0 %}
+    <button type="button" class="chip" data-topic="{{ t.slug }}" aria-pressed="false">{{ t.label }} <span class="count">{{ n }}</span></button>
+      {%- endif -%}
+    {%- endfor %}
+  </div>
+  <p class="filter-status" aria-live="polite"><span class="status-text"></span> <button type="button" class="clear" hidden>Clear filters</button></p>
+</div>
+
+{% for s in page.sections %}
+{%- assign list = site.data.papers | where: "type", s.type -%}
+{%- if list.size > 0 %}
+<section class="paper-section" id="{{ s.id }}">
+  <h2>{{ s.title }} <span class="section-count">{{ list.size }}</span></h2>
+  {% include paper-list.html papers=list year_labels=s.year_labels %}
+</section>
+{%- endif %}
+{% endfor %}
+
+<section class="paper-section software" id="software">
+  <h2>Software</h2>
+  <ul class="software-list">
+    {%- for sw in site.data.software %}
+    <li><a href="{{ sw.url }}"><code>{{ sw.name }}</code></a> — {{ sw.description }}</li>
+    {%- endfor %}
+  </ul>
+</section>
