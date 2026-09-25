@@ -11,14 +11,21 @@ sections:
 
 <div class="filters" hidden>
   <input class="search" type="search" placeholder="Search titles, coauthors, venues…" aria-label="Search papers">
-  <div class="chips" role="group" aria-label="Filter by topic">
-    {%- for t in site.data.topics -%}
-      {%- assign n = site.data.papers | where_exp: "p", "p.topics contains t.slug" | size -%}
-      {%- if n > 0 %}
-    <button type="button" class="chip" data-topic="{{ t.slug }}" aria-pressed="false">{{ t.label }} <span class="count">{{ n }}</span></button>
-      {%- endif -%}
-    {%- endfor %}
+  {%- assign groups = site.data.topics | map: "group" | uniq -%}
+  {%- for g in groups %}
+  {%- assign group_topics = site.data.topics | where: "group", g %}
+  <div class="chip-group" role="group" aria-label="{{ g }} topics">
+    <span class="chip-group-label">{{ g }}</span>
+    <div class="chips">
+      {%- for t in group_topics -%}
+        {%- assign n = site.data.papers | where_exp: "p", "p.topics contains t.slug" | size -%}
+        {%- if n > 0 %}
+      <button type="button" class="chip" data-topic="{{ t.slug }}" aria-pressed="false">{{ t.label }} <span class="count">{{ n }}</span></button>
+        {%- endif -%}
+      {%- endfor %}
+    </div>
   </div>
+  {%- endfor %}
   <p class="filter-status" aria-live="polite"><span class="status-text"></span> <button type="button" class="clear" hidden>Clear filters</button></p>
 </div>
 

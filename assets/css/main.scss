@@ -199,6 +199,13 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
 }
 .search::placeholder { color: var(--faint); }
 .chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+.chip-group { display: flex; align-items: baseline; gap: .75rem; }
+.chip-group + .chip-group { margin-top: .45rem; }
+.chip-group-label {
+  flex: none; width: 7rem; font-size: .7rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--faint);
+}
+.chip-group .chips { flex: 1; }
 .filter-status { margin: .5rem 0 0; font-size: .85rem; color: var(--muted); min-height: 1.2em; }
 .clear { font: inherit; border: 0; background: none; color: var(--link); cursor: pointer; padding: 0; text-decoration: underline; }
 .section-count { font-family: var(--sans); font-size: .8rem; font-weight: 500; color: var(--faint); vertical-align: middle; margin-left: .25rem; }
@@ -207,4 +214,6 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
 .software-list { padding-left: 1.2rem; }
 @media (max-width: 640px) {
   .filters { position: static; }
+  .chip-group { flex-direction: column; gap: .3rem; }
+  .chip-group-label { width: auto; }
 }

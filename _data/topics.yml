@@ -1,21 +1,33 @@
-# Topic slug -> label. Order here is the order of the filter chips on /research/.
+# Topic slug -> label, grouped for the filter bar on /research/.
+# `group` sets which row a topic's button appears in; groups appear in the order they first
+# show up here, and topics within a group keep their order here.
 - slug: synthetic-control
   label: Synthetic control & panel data
+  group: Methods
 - slug: balancing-weights
   label: Balancing weights
+  group: Methods
 - slug: policy-learning
   label: Policy learning & decisions
+  group: Methods
 - slug: sensitivity-partial-id
   label: Sensitivity & partial identification
+  group: Methods
 - slug: ai-llms
   label: AI & language models
+  group: Methods
 - slug: experiments
   label: Experiments
+  group: Methods
 - slug: surveys
   label: Surveys
+  group: Methods
 - slug: health-policy
   label: Health policy
+  group: Applications
 - slug: criminal-justice
   label: Criminal justice
+  group: Applications
 - slug: education
   label: Education
+  group: Applications
