@@ -46,9 +46,17 @@
   {%- endif %}
   {%- if p.topics.size > 0 %}
   <p class="paper-topics">
+    {%- comment -%} Group order follows _data/topics.yml (Methods, then Applications); topics not in that file go last. {%- endcomment -%}
+    {%- assign topic_groups = site.data.topics | map: "group" | uniq -%}
+    {%- for g in topic_groups -%}
+      {%- for t in p.topics -%}
+        {%- assign topic = site.data.topics | where: "slug", t | first -%}
+        {%- if topic.group == g %}<button type="button" class="topic-link" data-topic="{{ t }}">{{ topic.label }}</button>{% endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
     {%- for t in p.topics -%}
       {%- assign topic = site.data.topics | where: "slug", t | first -%}
-      <button type="button" class="topic-link" data-topic="{{ t }}">{{ topic.label | default: t }}</button>
+      {%- unless topic %}<button type="button" class="topic-link" data-topic="{{ t }}">{{ t }}</button>{% endunless -%}
     {%- endfor -%}
   </p>
   {%- endif %}
