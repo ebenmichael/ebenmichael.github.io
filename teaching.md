@@ -5,17 +5,28 @@ permalink: /teaching/
 
 ## Carnegie Mellon University
 
+**Fall 2026**
+- 90-777 Intermediate Statistics
+- 95-796 Statistics for IT Managers
+- 36-309/36-749 Experimental Design for Behavioral and Social Sciences
+
+
+**Fall 2025**
+- 90-777 Intermediate Statistics
+- 95-796 Statistics for IT Managers
+- 36-309/36-749 Experimental Design for Behavioral and Social Sciences
+
 **Fall 2024**
 - 90-777 Intermediate Statistics
 - 95-796 Statistics for IT Managers
 - 36-309/36-749 Experimental Design for Behavioral and Social Sciences
 
-**Spring 2023**
-- 36-402 Advanced Data Analysis
-
 **Fall 2023**
 - 90-777 Intermediate Statistics
 - 36-490/36-497 Statistics Research (and Corporate) Capstones
+
+**Spring 2023**
+- 36-402 Advanced Data Analysis
 
 ## Workshops
 
