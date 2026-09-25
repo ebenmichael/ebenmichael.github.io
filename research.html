@@ -38,12 +38,3 @@ sections:
 </section>
 {%- endif %}
 {% endfor %}
-
-<section class="paper-section software" id="software">
-  <h2>Software</h2>
-  <ul class="software-list">
-    {%- for sw in site.data.software %}
-    <li><a href="{{ sw.url }}"><code>{{ sw.name }}</code></a> — {{ sw.description }}</li>
-    {%- endfor %}
-  </ul>
-</section>

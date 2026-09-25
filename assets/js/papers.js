@@ -7,7 +7,7 @@
   var search = filters.querySelector(".search");
   var barChips = Array.prototype.slice.call(filters.querySelectorAll(".chip"));
   var papers = Array.prototype.slice.call(document.querySelectorAll(".paper-section .paper"));
-  var sections = Array.prototype.slice.call(document.querySelectorAll(".paper-section:not(.software)"));
+  var sections = Array.prototype.slice.call(document.querySelectorAll(".paper-section"));
   var statusText = filters.querySelector(".status-text");
   var clearBtn = filters.querySelector(".clear");
   var active = new Set();

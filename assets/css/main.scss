@@ -101,7 +101,7 @@ img { max-width: 100%; height: auto; }
   :root:not([data-theme="light"]) .when-light { display: none; }
 }
 
-main { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
+main.wrap { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
 .site-footer { border-top: 1px solid var(--border); color: var(--faint); font-size: .9rem; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; padding-top: 1.25rem; padding-bottom: 1.25rem; }
 .social { display: flex; gap: 1rem; font-size: 1.15rem; }
@@ -211,7 +211,6 @@ main { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 70vh; }
 .section-count { font-family: var(--sans); font-size: .8rem; font-weight: 500; color: var(--faint); vertical-align: middle; margin-left: .25rem; }
 .paper-section h2 { margin-top: 2.25rem; }
 .paper-section[hidden], .paper[hidden], .year-label[hidden] { display: none; }
-.software-list { padding-left: 1.2rem; }
 @media (max-width: 640px) {
   .filters { position: static; }
   .chip-group { flex-direction: column; gap: .3rem; }

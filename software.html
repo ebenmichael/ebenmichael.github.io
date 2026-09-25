@@ -1,0 +1,13 @@
+---
+title: Software
+permalink: /software/
+---
+<ol class="papers">
+  {%- for sw in site.data.software %}
+  <li class="paper">
+    <h3 class="paper-title"><a href="{{ sw.url }}"><code>{{ sw.name }}</code></a></h3>
+    <p class="paper-venue">{{ sw.description }}</p>
+    <div class="paper-actions"><a class="pill" href="{{ sw.url }}">GitHub</a></div>
+  </li>
+  {%- endfor %}
+</ol>

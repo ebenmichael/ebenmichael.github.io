@@ -20,7 +20,8 @@ topics, links, and any `extra_links` (press coverage etc.). Then commit and push
 
 - `_data/papers.yml` — every paper (the research page and home page render from this)
 - `_data/topics.yml` — topic tags and their labels (order = filter chip order)
-- `_data/software.yml`, `_data/navigation.yml`
-- `index.md` (bio), `teaching.md`, `research.html`, `betty-ww2.md` (unlisted)
+- `_data/software.yml` — R packages listed on /software/
+- `_data/navigation.yml` — top menu
+- `index.md` (bio), `research.html`, `software.html`, `teaching.md`, `betty-ww2.md` (unlisted)
 - `_layouts/`, `_includes/`, `assets/css/main.scss`, `assets/js/papers.js` — the theme
 - `scripts/add_paper.py` — arXiv / Crossref helper behind `make paper`
