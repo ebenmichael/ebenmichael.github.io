@@ -5,7 +5,7 @@ role: "Assistant Professor, Heinz College and Department of Statistics & Data Sc
 recent_papers: 5
 ---
 
-I am an assistant professor in the Department of Statistics & Data Science and the Heinz College of Information Systems and Public Policy at Carnegie Mellon University.
+I am the Heinz College Dean's Career Development Assistant Professor of Statistics and Public Policy, jointly appointed in the Heinz College of Information Systems and Public Policy and the Department of Statistics & Data Science at Carnegie Mellon University.
 I am also affiliated with the [CMU-NIST AI Measurement Science & Engineering Cooperative Research Center (AIMSEC)](https://www.cmu.edu/aimsec/).
 Previously, I was a postdoctoral fellow in the Institute for Quantitative Social Science and the Department of Statistics at Harvard University.
 I received my PhD in Statistics from U.C. Berkeley and I spent my undergraduate years at Columbia University where I received a

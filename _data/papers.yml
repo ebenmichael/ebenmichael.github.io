@@ -8,6 +8,30 @@
 # "2026+"), topics (slugs from _data/topics.yml), links (journal, proceedings, publisher, arxiv,
 # nber, draft, code, slides), extra_links (label/url pairs), award, doi, abstract.
 
+- id: raji-2026-bridging
+  title: "Bridging Predictions and Interventions: An Integrated Framework for Automated Decision-Systems"
+  authors: ["Inioluwa Deborah Raji", "Lydia T. Liu", "Angela Zhou", "Luke Guerdan", "Jessica Hullman", "Daniel Malinsky", "Bryan Wilder", "Simone Zhang", "Hammaad Adam", "Amanda Coston", "Ben Laufer", "Ezinne Nwankwo", "Michael Zanger-Tishler", "Eli Ben-Michael", "Avi Feller", "Talia Gillis", "Shion Guha", "Daniel Ho", "Lily Hu", "Kosuke Imai", "Sayash Kapoor", "Joshua Loftus", "Razieh Nabi", "Juan Carlos Perdomo", "Matthew Salganik", "Mark Sendak", "Berk Ustun", "Suresh Venkatasubramanian", "Angelina Wang", "Ashia Wilson"]
+  type: preprint
+  venue: ""
+  year: 2026
+  topics: [ai-llms]
+  links:
+    arxiv: "2606.25668"
+  abstract: >-
+    Automated decision systems (ADS) leverage predictions about individual future outcomes to inform consequential decision-making in organizational settings. Across various settings - including criminal pretrial release, clinical triage, student support, and more - it is often assumed that improved predictive accuracy is the priority consideration in determining better downstream outcomes upon the deployment of ADS. In practice, real-world case studies reveal that this is far from the case: introducing individual predictions into decision-making modifies organizational workflows, assessment, and decision-making processes in ways that require a complete re-consideration of our approach to the design, evaluation, and deployment of ADS. As a result, this Perspective develops an integrated framework for studying ADS in social systems, shifting current priorities from a purely prediction-based paradigm towards an intervention-oriented view that accounts for real-world conditions. Our aim is to improve our understanding of ADS and more meaningfully anticipate its downstream societal and organizational consequences.
+
+- id: liu-2025-bridging
+  title: "Bridging Prediction and Intervention Problems in Social Systems"
+  authors: ["Lydia T. Liu", "Inioluwa Deborah Raji", "Angela Zhou", "Luke Guerdan", "Jessica Hullman", "Daniel Malinsky", "Bryan Wilder", "Simone Zhang", "Hammaad Adam", "Amanda Coston", "Ben Laufer", "Ezinne Nwankwo", "Michael Zanger-Tishler", "Eli Ben-Michael", "Solon Barocas", "Avi Feller", "Marissa Gerchick", "Talia Gillis", "Shion Guha", "Daniel Ho", "Lily Hu", "Kosuke Imai", "Sayash Kapoor", "Joshua Loftus", "Razieh Nabi", "Arvind Narayanan", "Ben Recht", "Juan Carlos Perdomo", "Matthew Salganik", "Mark Sendak", "Alexander Tolbert", "Berk Ustun", "Suresh Venkatasubramanian", "Angelina Wang", "Ashia Wilson"]
+  type: preprint
+  venue: ""
+  year: 2025
+  topics: [ai-llms]
+  links:
+    arxiv: "2507.05216"
+  abstract: >-
+    Many automated decision systems (ADS) are designed to solve prediction problems -- where the goal is to learn patterns from a sample of the population and apply them to individuals from the same population. In reality, these prediction systems operationalize holistic policy interventions in deployment. Once deployed, ADS can shape impacted population outcomes through an effective policy change in how decision-makers operate, while also being defined by past and present interactions between stakeholders and the limitations of existing organizational, as well as societal, infrastructure and context. In this work, we consider the ways in which we must shift from a prediction-focused paradigm to an intervention-oriented paradigm when considering the impact of ADS within social systems. We argue this requires a new default problem setup for ADS beyond prediction, to instead consider predictions as decision support, final decisions, and outcomes. We highlight how this perspective unifies modern statistical frameworks and other tools to study the design, implementation, and evaluation of ADS systems, and point to the research directions necessary to operationalize this paradigm shift. Using these tools, we characterize the limitations of focusing on isolated prediction tasks, and lay the foundation for a more intervention-oriented approach to developing and deploying ADS.
+
 - id: benmichael-2026-weighting
   title: "A Weighting Framework for Clusters as Confounders in Observational Studies"
   authors: ["Eli Ben-Michael", "Avi Feller", "Luke Keele"]
@@ -111,11 +135,13 @@
   title: "Longitudinal Causal Inference with Selective Eligibility"
   authors: ["Zhichao Jiang", "Eli Ben-Michael", "D. James Greiner", "Ryan Halen", "Kosuke Imai"]
   type: article
-  venue: "Annals of Applied Statistics"
+  venue: "The Annals of Applied Statistics"
   year: 2026
-  forthcoming: true
+  forthcoming: false
   topics: [experiments, criminal-justice]
+  doi: "10.1214/26-AOAS2201"
   links:
+    journal: "https://doi.org/10.1214/26-aoas2201"
     arxiv: "2410.17864"
   abstract: >-
     Dropout poses a significant challenge to causal inference in longitudinal studies with time-varying treatments. However, existing research does not simultaneously address dropout and time-varying treatments. We examine selective eligibility, an important yet overlooked source of non-ignorable dropout in such settings. This problem arises when a unit's prior treatment history influences its eligibility for subsequent treatments, a common scenario in medical and other settings. We propose a general methodological framework for longitudinal causal inference with selective eligibility. By focusing on a subgroup of units who would become eligible for treatment given a specific past treatment sequence, we define the time-specific eligible treatment effect and expected number of outcome events under a treatment sequence of interest. Under a generalized version of sequential ignorability, we derive two nonparametric identification formulae, each leveraging different parts of the observed data distribution. We then derive the efficient influence function of each causal estimand, yielding the corresponding doubly robust estimator. Finally, we apply the proposed methodology to an impact evaluation of a pre-trial risk assessment instrument in the criminal justice system, in which selective eligibility arises due to recidivism.
