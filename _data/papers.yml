@@ -175,7 +175,7 @@
   type: article
   venue: "American Journal of Epidemiology"
   year: 2026
-  forthcoming: true
+  forthcoming: false
   topics: [synthetic-control, health-policy]
   links:
     journal: "https://academic.oup.com/aje/advance-article-abstract/doi/10.1093/aje/kwag032/8504393"
@@ -189,7 +189,7 @@
   type: article
   venue: "Journal of the Royal Statistical Society, Series A"
   year: 2026
-  forthcoming: true
+  forthcoming: false
   topics: [sensitivity-partial-id, health-policy]
   links:
     journal: "https://academic.oup.com/jrsssa/advance-article/doi/10.1093/jrsssa/qnag002/8475349?searchresult=1&login=true"
