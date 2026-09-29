@@ -458,7 +458,7 @@
   type: article
   venue: "Annals of Applied Statistics"
   year: 2023
-  topics: [synthetic-control]
+  topics: [synthetic-control, criminal-justice]
   links:
     journal: "https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-2/Estimating-the-effects-of-a-California-gun-control-program-with/10.1214/22-AOAS1654.short"
     arxiv: "2110.07006"
