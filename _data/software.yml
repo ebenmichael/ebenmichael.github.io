@@ -4,3 +4,6 @@
 - name: multical
   description: R package for multilevel calibration
   url: https://github.com/ebenmichael/multical
+- name: rdlearn
+  description: R package for  safe policy learning under regression discontinuity designs with multiple cutoffs
+  url: https://cran.r-project.org/web/packages/rdlearn/index.html

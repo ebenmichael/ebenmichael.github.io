@@ -7,7 +7,10 @@ permalink: /software/
   <li class="paper">
     <h3 class="paper-title"><a href="{{ sw.url }}"><code>{{ sw.name }}</code></a></h3>
     <p class="paper-venue">{{ sw.description }}</p>
-    <div class="paper-actions"><a class="pill" href="{{ sw.url }}">GitHub</a></div>
+    {%- if sw.label %}{% assign label = sw.label %}
+    {%- elsif sw.url contains "cran.r-project.org" %}{% assign label = "CRAN" %}
+    {%- else %}{% assign label = "GitHub" %}{% endif %}
+    <div class="paper-actions"><a class="pill" href="{{ sw.url }}">{{ label }}</a></div>
   </li>
   {%- endfor %}
 </ol>
