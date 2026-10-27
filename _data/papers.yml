@@ -8,6 +8,18 @@
 # "2026+"), topics (slugs from _data/topics.yml), links (journal, proceedings, publisher, arxiv,
 # nber, draft, code, slides), extra_links (label/url pairs), award, doi, abstract.
 
+- id: benmichael-2026-ai
+  title: "AI-assisted design and analysis of experiments with unstructured treatments"
+  authors: ["Eli Ben-Michael", "Zach Branson"]
+  type: preprint
+  venue: ""
+  year: 2026
+  topics: [experiments, ai-llms]
+  links:
+    arxiv: "2610.33818"
+  abstract: >-
+    Randomized experiments involving complex, unstructured treatments such as text, images, or video, are increasingly common in social science research. The goal of many of these studies is to estimate the effect of a structured, interpretable attribute that generalizes beyond the treatments used in the experiment (e.g., the presence of a linguistic or visual feature). There are two key challenges when conducting such studies: observed effects of the attribute of interest (i) may be confounded by other correlated attributes, leading to poor internal validity; and (ii) may not generalize beyond the treatments used in the experiment, leading to poor external validity. We propose a framework for designing experiments with unstructured treatments that leverages generative AI or large databases to sample treatments in a way that explicitly navigates the tradeoff between internal and external validity. We show how to conduct conservative asymptotic inference with a difference-in-means estimator, and develop a calibrated AI-assisted estimator that incorporates zero-shot AI predictions to improve precision without introducing bias. Throughout, we work in a finite population framework, where treatment assignment is the only source of randomness, and treat AI generations and predictions as black-boxes with no guarantees on their performance. We illustrate and evaluate our approach by designing two hypothetical experiments, one with text and another with images.
+
 - id: raji-2026-bridging
   title: "Bridging Predictions and Interventions: An Integrated Framework for Automated Decision-Systems"
   authors: ["Inioluwa Deborah Raji", "Lydia T. Liu", "Angela Zhou", "Luke Guerdan", "Jessica Hullman", "Daniel Malinsky", "Bryan Wilder", "Simone Zhang", "Hammaad Adam", "Amanda Coston", "Ben Laufer", "Ezinne Nwankwo", "Michael Zanger-Tishler", "Eli Ben-Michael", "Avi Feller", "Talia Gillis", "Shion Guha", "Daniel Ho", "Lily Hu", "Kosuke Imai", "Sayash Kapoor", "Joshua Loftus", "Razieh Nabi", "Juan Carlos Perdomo", "Matthew Salganik", "Mark Sendak", "Berk Ustun", "Suresh Venkatasubramanian", "Angelina Wang", "Ashia Wilson"]
